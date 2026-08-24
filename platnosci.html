@@ -6,10 +6,15 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
   <title>Płatności — WebNexo.pl</title>
+
+  <meta
+    name="description"
+    content="Płatności za realizację stron internetowych WebNexo.pl."
+  >
 
   <style>
 
@@ -19,11 +24,20 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
+
       background: #08090c;
       color: white;
+
       min-height: 100vh;
+
+      overflow-x: hidden;
     }
 
     a {
@@ -31,68 +45,167 @@
       color: inherit;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .container {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin: auto;
     }
 
 
-    /* MENU */
+    /* =========================
+       MENU
+    ========================= */
 
     nav {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      background: rgba(8, 9, 12, 0.88);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-container {
       height: 78px;
 
       display: flex;
-      align-items: center;
 
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-
-      background: rgba(8,9,12,0.9);
-
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      display: flex;
       align-items: center;
       justify-content: space-between;
+
+      gap: 30px;
     }
+
+
+    /* LOGO */
 
     .logo {
       width: 220px;
       height: 58px;
+
+      display: flex;
+      align-items: center;
+
       overflow: hidden;
+
+      flex-shrink: 0;
     }
 
     .logo img {
       width: 220px;
       height: 58px;
+
       object-fit: cover;
+      object-position: center;
+
+      display: block;
     }
 
-    .back {
+
+    /* LINKI NA PC */
+
+    .nav-links {
+      display: flex;
+
+      align-items: center;
+
+      gap: 27px;
+    }
+
+    .nav-links a {
+      color: #b9bbc5;
+
+      font-size: 15px;
+
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+
+    /* AKTYWNA STRONA */
+
+    .nav-links .active-link {
+      color: #a795ff;
+
+      font-weight: 700;
+    }
+
+
+    /* PRZYCISK KONTAKT */
+
+    .contact-btn {
       padding: 11px 18px;
 
       border-radius: 12px;
 
-      background: rgba(255,255,255,0.06);
+      background: white;
 
-      border: 1px solid rgba(255,255,255,0.1);
+      color: #08090c !important;
 
-      font-size: 14px;
+      font-weight: 700;
 
-      transition: .2s;
+      transition: 0.2s;
     }
 
-    .back:hover {
-      background: rgba(255,255,255,0.1);
+    .contact-btn:hover {
+      transform: translateY(-2px);
     }
 
 
-    /* GŁÓWNA SEKCJA */
+    /* =========================
+       HAMBURGER TELEFON
+    ========================= */
+
+    .menu-btn {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      border-radius: 12px;
+
+      border: 1px solid rgba(255, 255, 255, 0.10);
+
+      background: rgba(255, 255, 255, 0.05);
+
+      color: white;
+
+      font-size: 24px;
+
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+
+    /* =========================
+       GŁÓWNA CZĘŚĆ
+    ========================= */
 
     main {
-      padding: 100px 0;
+      padding: 165px 0 90px;
     }
 
     .label {
@@ -114,6 +227,8 @@
       line-height: 1;
 
       letter-spacing: -4px;
+
+      max-width: 850px;
     }
 
     .gradient {
@@ -126,6 +241,8 @@
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
+      background-clip: text;
     }
 
     .description {
@@ -133,13 +250,17 @@
 
       font-size: 17px;
 
+      line-height: 1.7;
+
       max-width: 650px;
 
       margin-top: 22px;
     }
 
 
-    /* PŁATNOŚCI */
+    /* =========================
+       PŁATNOŚCI
+    ========================= */
 
     .payments {
       display: grid;
@@ -156,21 +277,21 @@
 
       border-radius: 25px;
 
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
 
       background: linear-gradient(
         145deg,
-        rgba(255,255,255,0.055),
-        rgba(255,255,255,0.015)
+        rgba(255, 255, 255, 0.055),
+        rgba(255, 255, 255, 0.015)
       );
 
-      transition: .3s;
+      transition: 0.3s;
     }
 
     .payment:hover {
       transform: translateY(-5px);
 
-      border-color: rgba(124,92,255,0.35);
+      border-color: rgba(124, 92, 255, 0.35);
     }
 
     .icon {
@@ -178,12 +299,13 @@
       height: 55px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
       border-radius: 16px;
 
-      background: rgba(124,92,255,0.15);
+      background: rgba(124, 92, 255, 0.15);
 
       color: #a795ff;
 
@@ -200,6 +322,8 @@
     .payment p {
       color: #999ba6;
 
+      line-height: 1.7;
+
       margin-top: 10px;
     }
 
@@ -210,17 +334,21 @@
 
       border-radius: 13px;
 
-      background: rgba(124,92,255,0.08);
+      background: rgba(124, 92, 255, 0.08);
 
-      border: 1px solid rgba(124,92,255,0.15);
+      border: 1px solid rgba(124, 92, 255, 0.15);
 
       color: #c8c9d2;
 
       font-size: 14px;
+
+      line-height: 1.6;
     }
 
 
-    /* JAK TO DZIAŁA */
+    /* =========================
+       JAK WYGLĄDA PŁATNOŚĆ
+    ========================= */
 
     .how {
       margin-top: 80px;
@@ -229,9 +357,9 @@
 
       border-radius: 25px;
 
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
 
-      background: rgba(255,255,255,0.025);
+      background: rgba(255, 255, 255, 0.025);
     }
 
     .how h2 {
@@ -253,7 +381,7 @@
 
       border-left: 2px solid #7c5cff;
 
-      background: rgba(255,255,255,0.02);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .step span {
@@ -276,10 +404,14 @@
       color: #858793;
 
       font-size: 13px;
+
+      line-height: 1.6;
     }
 
 
-    /* OSTRZEŻENIE */
+    /* =========================
+       INFORMACJA
+    ========================= */
 
     .notice {
       margin-top: 30px;
@@ -288,17 +420,21 @@
 
       border-radius: 15px;
 
-      background: rgba(98,230,166,0.05);
+      background: rgba(98, 230, 166, 0.05);
 
-      border: 1px solid rgba(98,230,166,0.15);
+      border: 1px solid rgba(98, 230, 166, 0.15);
 
       color: #aeb8b4;
 
       font-size: 14px;
+
+      line-height: 1.6;
     }
 
 
-    /* KONTAKT */
+    /* =========================
+       KONTAKT
+    ========================= */
 
     .contact {
       text-align: center;
@@ -309,18 +445,21 @@
 
       border-radius: 28px;
 
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
 
       background:
         radial-gradient(
           circle,
-          rgba(124,92,255,.15),
+          rgba(124, 92, 255, 0.15),
           transparent 60%
-        );
+        ),
+        rgba(255, 255, 255, 0.02);
     }
 
     .contact h2 {
       font-size: clamp(34px, 5vw, 52px);
+
+      letter-spacing: -2px;
     }
 
     .contact p {
@@ -330,9 +469,14 @@
     }
 
     .button {
-      display: inline-block;
+      display: inline-flex;
+
+      min-height: 52px;
 
       padding: 15px 24px;
+
+      align-items: center;
+      justify-content: center;
 
       border-radius: 14px;
 
@@ -344,69 +488,236 @@
     }
 
 
-    /* TELEFON */
+    /* =========================
+       STOPKA
+    ========================= */
 
-    @media (max-width: 750px) {
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+      color: #6e707c;
+
+      font-size: 13px;
+    }
+
+    .footer {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    /* =========================
+       TABLET / TELEFON
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 20px 22px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        background: rgba(8, 9, 12, 0.98);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 10px;
+
+        font-size: 16px;
+      }
+
+      .nav-links a:not(.contact-btn):hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .contact-btn {
+        margin-top: 7px;
+
+        text-align: center;
+      }
+
+
+      .payments {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    /* =========================
+       TELEFON
+    ========================= */
+
+    @media (max-width: 600px) {
 
       .container {
         width: calc(100% - 28px);
       }
 
+      .nav-container {
+        height: 70px;
+      }
+
       .logo {
-        width: 155px;
+        width: 165px;
         height: 50px;
       }
 
       .logo img {
-        width: 155px;
+        width: 165px;
         height: 50px;
       }
 
-      main {
-        padding: 70px 0;
+      .nav-links {
+        top: 70px;
+
+        padding-left: 14px;
+        padding-right: 14px;
       }
+
+
+      main {
+        padding: 125px 0 70px;
+      }
+
 
       h1 {
         font-size: 46px;
 
+        line-height: 1;
+
         letter-spacing: -3px;
       }
 
+      .description {
+        font-size: 16px;
+      }
+
+
       .payments {
-        grid-template-columns: 1fr;
-
         margin-top: 40px;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .how {
-        padding: 25px 20px;
       }
 
       .payment {
         padding: 25px;
       }
 
+
+      .how {
+        margin-top: 60px;
+
+        padding: 25px 20px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+
       .contact {
+        margin-top: 60px;
+
         padding: 45px 20px;
+      }
+
+      .button {
+        width: 100%;
+
+        font-size: 14px;
+      }
+
+
+      .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+
+    /* =========================
+       BARDZO MAŁY TELEFON
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      .logo {
+        width: 145px;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      h1 {
+        font-size: 40px;
       }
 
     }
 
   </style>
+
 </head>
+
 
 <body>
 
 
+  <!-- =========================
+       MENU
+  ========================= -->
+
   <nav>
 
-    <div class="container nav">
+    <div class="container nav-container">
 
-      <a href="index.html" class="logo">
+
+      <!-- LOGO -->
+
+      <a
+        href="index.html"
+        class="logo"
+      >
 
         <img
           src="logo24.png"
@@ -415,14 +726,69 @@
 
       </a>
 
-      <a href="index.html" class="back">
-        ← Strona główna
-      </a>
+
+      <!-- 3 KRESKI NA TELEFONIE -->
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <!-- MENU -->
+
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="index.html">
+          Strona główna
+        </a>
+
+        <a href="index.html#oferta">
+          Oferta
+        </a>
+
+        <a href="index.html#cennik">
+          Cennik
+        </a>
+
+        <a href="index.html#jak-to-dziala">
+          Jak to działa
+        </a>
+
+        <a
+          href="platnosci.html"
+          class="active-link"
+        >
+          Płatności
+        </a>
+
+        <a
+          href="mailto:kontakt.webnexo@gmail.com"
+          class="contact-btn"
+        >
+          Kontakt
+        </a>
+
+      </div>
+
 
     </div>
 
   </nav>
 
+
+
+  <!-- =========================
+       GŁÓWNA TREŚĆ
+  ========================= -->
 
   <main>
 
@@ -435,24 +801,33 @@
 
 
       <h1>
+
         Proste i
+
         <span class="gradient">
           wygodne płatności.
         </span>
+
       </h1>
 
 
       <p class="description">
 
         Po ustaleniu szczegółów projektu i zaakceptowaniu wyceny
-        otrzymasz ode mnie dane potrzebne do wykonania płatności.
+        otrzymasz dane potrzebne do wykonania płatności.
 
       </p>
 
 
 
+      <!-- =========================
+           METODY PŁATNOŚCI
+      ========================= -->
+
       <div class="payments">
 
+
+        <!-- BLIK -->
 
         <div class="payment">
 
@@ -473,14 +848,16 @@
 
           <div class="info">
 
-            Numer telefonu do płatności otrzymasz
-            dopiero po zaakceptowaniu wyceny projektu.
+            Numer telefonu do płatności otrzymasz dopiero
+            po zaakceptowaniu wyceny projektu.
 
           </div>
 
         </div>
 
 
+
+        <!-- PRZELEW -->
 
         <div class="payment">
 
@@ -501,8 +878,8 @@
 
           <div class="info">
 
-            Numer rachunku i dane do przelewu
-            otrzymasz po ustaleniu szczegółów projektu.
+            Numer rachunku i dane do przelewu otrzymasz
+            po ustaleniu szczegółów projektu.
 
           </div>
 
@@ -513,11 +890,16 @@
 
 
 
+      <!-- =========================
+           JAK WYGLĄDA PŁATNOŚĆ
+      ========================= -->
+
       <div class="how">
 
         <p class="label">
           Jak wygląda płatność?
         </p>
+
 
         <h2>
           Wszystko ustalamy przed rozpoczęciem.
@@ -600,6 +982,9 @@
       </div>
 
 
+
+      <!-- INFORMACJA -->
+
       <div class="notice">
 
         Dane do płatności nie są publikowane na stronie.
@@ -609,6 +994,8 @@
       </div>
 
 
+
+      <!-- KONTAKT -->
 
       <div class="contact">
 
@@ -633,6 +1020,120 @@
     </div>
 
   </main>
+
+
+
+  <!-- STOPKA -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <div>
+        © 2026 WebNexo.pl. Wszystkie prawa zastrzeżone.
+      </div>
+
+      <div>
+        Strony internetowe na zamówienie.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================
+       MENU TELEFON
+  ========================= -->
+
+  <script>
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", function () {
+
+      navLinks.classList.toggle("active");
+
+
+      const opened =
+        navLinks.classList.contains("active");
+
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        opened
+      );
+
+
+      if (opened) {
+
+        menuBtn.textContent = "✕";
+
+      } else {
+
+        menuBtn.textContent = "☰";
+
+      }
+
+    });
+
+
+
+    /* Zamknij po kliknięciu opcji */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove("active");
+
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+
+
+    /* Reset po przejściu na PC */
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 850) {
+
+          navLinks.classList.remove("active");
+
+          menuBtn.textContent = "☰";
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
 
 
 </body>
