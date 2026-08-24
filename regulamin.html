@@ -1,1 +1,1465 @@
-<a></a>
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Regulamin — WebNexo.pl</title>
+
+  <meta
+    name="description"
+    content="Regulamin świadczenia usług WebNexo.pl."
+  >
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08090c;
+      color: #ffffff;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      background: rgba(8, 9, 12, 0.88);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-container {
+      height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      width: 220px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 220px;
+      height: 58px;
+
+      object-fit: cover;
+      object-position: center;
+
+      display: block;
+    }
+
+
+    /* MENU PC */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 27px;
+    }
+
+    .nav-links a {
+      color: #b9bbc5;
+
+      font-size: 15px;
+
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .active-link {
+      color: #a795ff !important;
+      font-weight: 700;
+    }
+
+    .contact-btn {
+      padding: 11px 18px;
+
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      color: #08090c !important;
+
+      font-weight: 700;
+    }
+
+
+    /* MENU TELEFON */
+
+    .menu-btn {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      background: rgba(255,255,255,0.05);
+
+      color: white;
+
+      font-size: 24px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       NAGŁÓWEK
+    ========================= */
+
+    .hero {
+      padding: 165px 0 70px;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -170px;
+      top: 40px;
+
+      border-radius: 50%;
+
+      background: rgba(124, 92, 255, 0.18);
+
+      filter: blur(130px);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .label {
+      margin-bottom: 12px;
+
+      color: #7c5cff;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      max-width: 900px;
+
+      font-size: clamp(48px, 7vw, 76px);
+
+      line-height: 1;
+
+      letter-spacing: -4px;
+    }
+
+    .gradient {
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #9d8aff,
+        #61b9ff
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 720px;
+
+      margin-top: 24px;
+
+      color: #999ba6;
+
+      font-size: 17px;
+    }
+
+    .update {
+      display: inline-block;
+
+      margin-top: 25px;
+
+      padding: 8px 13px;
+
+      border-radius: 50px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(255,255,255,0.035);
+
+      color: #858794;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       REGULAMIN
+    ========================= */
+
+    .rules {
+      padding-bottom: 100px;
+    }
+
+    .rules-layout {
+      display: grid;
+
+      grid-template-columns: 250px 1fr;
+
+      gap: 40px;
+
+      align-items: start;
+    }
+
+
+    /* SPIS TREŚCI */
+
+    .toc {
+      position: sticky;
+
+      top: 110px;
+
+      padding: 22px;
+
+      border-radius: 20px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(255,255,255,0.025);
+    }
+
+    .toc-title {
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .toc a {
+      display: block;
+
+      padding: 8px 0;
+
+      color: #858794;
+
+      font-size: 13px;
+
+      transition: 0.2s;
+    }
+
+    .toc a:hover {
+      color: #a795ff;
+    }
+
+
+    /* TREŚĆ */
+
+    .rules-content {
+      min-width: 0;
+    }
+
+    .rule-section {
+      margin-bottom: 22px;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.045),
+        rgba(255,255,255,0.015)
+      );
+    }
+
+    .rule-number {
+      color: #7c5cff;
+
+      font-size: 12px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .rule-section h2 {
+      margin-top: 5px;
+      margin-bottom: 20px;
+
+      font-size: 27px;
+
+      letter-spacing: -1px;
+    }
+
+    .rule-section p {
+      margin-top: 12px;
+
+      color: #a1a3ad;
+
+      font-size: 15px;
+    }
+
+    .rule-section ul {
+      margin-top: 15px;
+      padding-left: 21px;
+
+      color: #a1a3ad;
+
+      font-size: 15px;
+    }
+
+    .rule-section li {
+      margin: 9px 0;
+    }
+
+    .highlight {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+
+    /* WAŻNA INFORMACJA */
+
+    .important {
+      margin-top: 30px;
+
+      padding: 22px;
+
+      border-radius: 16px;
+
+      border: 1px solid rgba(124,92,255,0.20);
+
+      background: rgba(124,92,255,0.07);
+
+      color: #b9bbc5;
+
+      font-size: 14px;
+    }
+
+
+    /* KONTAKT */
+
+    .contact {
+      margin-top: 40px;
+
+      padding: 55px 25px;
+
+      text-align: center;
+
+      border-radius: 26px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(124,92,255,0.15),
+          transparent 60%
+        ),
+        rgba(255,255,255,0.02);
+    }
+
+    .contact h2 {
+      font-size: 34px;
+    }
+
+    .contact p {
+      margin: 12px 0 25px;
+
+      color: #999ba6;
+    }
+
+    .contact-button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding: 14px 24px;
+
+      border-radius: 14px;
+
+      background: #ffffff;
+
+      color: #08090c;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       STOPKA
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid rgba(255,255,255,0.07);
+
+      color: #6e707c;
+
+      font-size: 13px;
+    }
+
+    .footer {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: #a795ff;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .rules-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+    }
+
+
+    /* =========================
+       MENU TELEFON
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 20px 22px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        background: rgba(8,9,12,0.98);
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 10px;
+
+        font-size: 16px;
+      }
+
+      .contact-btn {
+        margin-top: 7px;
+
+        text-align: center;
+      }
+
+    }
+
+
+    /* =========================
+       TELEFON
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .nav-container {
+        height: 70px;
+      }
+
+      .logo {
+        width: 165px;
+        height: 50px;
+      }
+
+      .logo img {
+        width: 165px;
+        height: 50px;
+      }
+
+      .nav-links {
+        top: 70px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .hero {
+        padding-top: 125px;
+        padding-bottom: 55px;
+      }
+
+      h1 {
+        font-size: 44px;
+
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .rules {
+        padding-bottom: 70px;
+      }
+
+      .rule-section {
+        padding: 24px 20px;
+      }
+
+      .rule-section h2 {
+        font-size: 23px;
+      }
+
+      .toc {
+        padding: 20px;
+      }
+
+      .contact {
+        padding: 40px 20px;
+      }
+
+      .contact-button {
+        width: 100%;
+      }
+
+      .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav-container">
+
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+
+        <img
+          src="logo24.png"
+          alt="WebNexo.pl"
+        >
+
+      </a>
+
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="index.html#oferta">
+          Oferta
+        </a>
+
+        <a href="index.html#cennik">
+          Cennik
+        </a>
+
+        <a href="index.html#jak-to-dziala">
+          Jak to działa
+        </a>
+
+        <a href="platnosci.html">
+          Płatności
+        </a>
+
+        <a
+          href="regulamin.html"
+          class="active-link"
+        >
+          Regulamin
+        </a>
+
+        <a
+          href="index.html#kontakt"
+          class="contact-btn"
+        >
+          Kontakt
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================
+       NAGŁÓWEK
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="container hero-content">
+
+      <p class="label">
+        WebNexo.pl
+      </p>
+
+      <h1>
+        Regulamin
+        <span class="gradient">
+          świadczenia usług.
+        </span>
+      </h1>
+
+      <p class="hero-description">
+
+        Poniżej znajdziesz najważniejsze zasady dotyczące
+        zamawiania, realizacji oraz płatności za projekty
+        wykonywane przez WebNexo.pl.
+
+      </p>
+
+      <div class="update">
+        Ostatnia aktualizacja: 24 sierpnia 2026
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       REGULAMIN
+  ========================= -->
+
+  <main class="rules">
+
+    <div class="container rules-layout">
+
+
+      <!-- SPIS TREŚCI -->
+
+      <aside class="toc">
+
+        <div class="toc-title">
+          Spis treści
+        </div>
+
+        <a href="#postanowienia">
+          1. Postanowienia ogólne
+        </a>
+
+        <a href="#zamowienia">
+          2. Zamówienia
+        </a>
+
+        <a href="#wycena">
+          3. Wycena
+        </a>
+
+        <a href="#platnosci">
+          4. Płatności
+        </a>
+
+        <a href="#realizacja">
+          5. Realizacja
+        </a>
+
+        <a href="#poprawki">
+          6. Poprawki
+        </a>
+
+        <a href="#hosting">
+          7. Hosting i domena
+        </a>
+
+        <a href="#baza">
+          8. Bazy danych
+        </a>
+
+        <a href="#prawa">
+          9. Prawa do projektu
+        </a>
+
+        <a href="#rezygnacja">
+          10. Rezygnacja
+        </a>
+
+        <a href="#reklamacje">
+          11. Reklamacje
+        </a>
+
+        <a href="#kontakt">
+          12. Kontakt
+        </a>
+
+      </aside>
+
+
+
+      <div class="rules-content">
+
+
+        <!-- 1 -->
+
+        <section
+          class="rule-section"
+          id="postanowienia"
+        >
+
+          <span class="rule-number">
+            Punkt 01
+          </span>
+
+          <h2>
+            Postanowienia ogólne
+          </h2>
+
+          <p>
+            Regulamin określa zasady świadczenia usług
+            związanych z projektowaniem i tworzeniem
+            stron internetowych przez WebNexo.pl.
+          </p>
+
+          <p>
+            Kontakt z WebNexo.pl odbywa się za pomocą adresu:
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>.
+          </p>
+
+          <p>
+            Przed rozpoczęciem realizacji klient otrzymuje
+            informacje dotyczące zakresu projektu, ceny
+            oraz przewidywanego terminu wykonania.
+          </p>
+
+        </section>
+
+
+
+        <!-- 2 -->
+
+        <section
+          class="rule-section"
+          id="zamowienia"
+        >
+
+          <span class="rule-number">
+            Punkt 02
+          </span>
+
+          <h2>
+            Składanie zamówienia
+          </h2>
+
+          <p>
+            Klient może skontaktować się z WebNexo.pl
+            i opisać projekt, który chciałby zrealizować.
+          </p>
+
+          <p>
+            W zgłoszeniu warto podać między innymi:
+          </p>
+
+          <ul>
+            <li>rodzaj strony internetowej,</li>
+            <li>orientacyjną liczbę podstron,</li>
+            <li>potrzebne funkcje,</li>
+            <li>informację o bazie danych, jeśli jest potrzebna,</li>
+            <li>preferowany wygląd strony,</li>
+            <li>materiały, które mają znaleźć się na stronie.</li>
+          </ul>
+
+        </section>
+
+
+
+        <!-- 3 -->
+
+        <section
+          class="rule-section"
+          id="wycena"
+        >
+
+          <span class="rule-number">
+            Punkt 03
+          </span>
+
+          <h2>
+            Wycena projektu
+          </h2>
+
+          <p>
+            Każdy projekt jest wyceniany indywidualnie.
+          </p>
+
+          <p>
+            Orientacyjny zakres cen prezentowany na stronie
+            WebNexo.pl wynosi obecnie
+            <span class="highlight">
+              od 300 zł do 3000 zł
+            </span>.
+          </p>
+
+          <p>
+            Ostateczna cena zależy między innymi od
+            rozbudowania projektu, liczby podstron,
+            funkcji oraz ilości pracy potrzebnej do realizacji.
+          </p>
+
+          <p>
+            Jeżeli w trakcie realizacji klient poprosi
+            o dodatkowe funkcje, które nie były częścią
+            pierwotnej wyceny, mogą zostać one dodatkowo wycenione.
+          </p>
+
+        </section>
+
+
+
+        <!-- 4 -->
+
+        <section
+          class="rule-section"
+          id="platnosci"
+        >
+
+          <span class="rule-number">
+            Punkt 04
+          </span>
+
+          <h2>
+            Płatności
+          </h2>
+
+          <p>
+            Dostępne metody płatności są opisane na stronie
+            <span class="highlight">
+              Płatności
+            </span>.
+          </p>
+
+          <p>
+            Dane potrzebne do wykonania płatności
+            są przekazywane klientowi indywidualnie
+            po zaakceptowaniu wyceny.
+          </p>
+
+          <p>
+            W zależności od projektu możliwe jest ustalenie
+            zaliczki przed rozpoczęciem realizacji.
+          </p>
+
+          <p>
+            Wysokość zaliczki oraz sposób rozliczenia pozostałej
+            części kwoty są ustalane przed rozpoczęciem projektu.
+          </p>
+
+        </section>
+
+
+
+        <!-- 5 -->
+
+        <section
+          class="rule-section"
+          id="realizacja"
+        >
+
+          <span class="rule-number">
+            Punkt 05
+          </span>
+
+          <h2>
+            Realizacja projektu
+          </h2>
+
+          <p>
+            Realizacja rozpoczyna się po zaakceptowaniu
+            przez klienta zakresu projektu, ceny oraz
+            ewentualnych warunków płatności.
+          </p>
+
+          <p>
+            Termin wykonania jest ustalany indywidualnie
+            i zależy od rozbudowania strony.
+          </p>
+
+          <p>
+            Termin może ulec zmianie, jeżeli klient
+            nie dostarczy na czas materiałów potrzebnych
+            do wykonania projektu.
+          </p>
+
+        </section>
+
+
+
+        <!-- 6 -->
+
+        <section
+          class="rule-section"
+          id="poprawki"
+        >
+
+          <span class="rule-number">
+            Punkt 06
+          </span>
+
+          <h2>
+            Poprawki i zmiany
+          </h2>
+
+          <p>
+            Klient może zgłaszać poprawki dotyczące
+            wykonanego projektu.
+          </p>
+
+          <p>
+            Drobne poprawki mieszczące się w wcześniej
+            uzgodnionym zakresie projektu mogą zostać
+            wykonane bez dodatkowej opłaty.
+          </p>
+
+          <p>
+            Duże zmiany, nowe podstrony lub dodatkowe funkcje,
+            których nie było w pierwotnym zamówieniu,
+            mogą wymagać dodatkowej wyceny.
+          </p>
+
+        </section>
+
+
+
+        <!-- 7 -->
+
+        <section
+          class="rule-section"
+          id="hosting"
+        >
+
+          <span class="rule-number">
+            Punkt 07
+          </span>
+
+          <h2>
+            Hosting i domena
+          </h2>
+
+          <p>
+            Koszt domeny oraz płatnego hostingu nie musi być
+            zawarty w cenie wykonania strony, chyba że strony
+            uzgodnią inaczej.
+          </p>
+
+          <p>
+            Jeżeli projekt wymaga płatnych usług zewnętrznych,
+            klient zostanie o tym poinformowany przed ich użyciem.
+          </p>
+
+          <p>
+            Opłaty odnawialne za domenę, hosting lub inne
+            zewnętrzne usługi mogą być ponoszone bezpośrednio
+            przez klienta.
+          </p>
+
+        </section>
+
+
+
+        <!-- 8 -->
+
+        <section
+          class="rule-section"
+          id="baza"
+        >
+
+          <span class="rule-number">
+            Punkt 08
+          </span>
+
+          <h2>
+            Bazy danych i dodatkowe funkcje
+          </h2>
+
+          <p>
+            Projekty wymagające bazy danych, systemu logowania,
+            panelu użytkownika lub podobnych funkcji
+            są wyceniane indywidualnie.
+          </p>
+
+          <p>
+            Aktualnie wdrożenie funkcji związanych z bazą danych
+            może kosztować
+            <span class="highlight">
+              od +1000 zł
+            </span>
+            względem podstawowej ceny projektu.
+          </p>
+
+          <p>
+            Jeżeli używana usługa bazodanowa posiada darmowe limity,
+            ich przekroczenie może w przyszłości powodować
+            dodatkowe koszty po stronie klienta.
+          </p>
+
+        </section>
+
+
+
+        <!-- 9 -->
+
+        <section
+          class="rule-section"
+          id="prawa"
+        >
+
+          <span class="rule-number">
+            Punkt 09
+          </span>
+
+          <h2>
+            Prawa do projektu
+          </h2>
+
+          <p>
+            Zasady przekazania plików oraz praw do konkretnej
+            realizacji są ustalane z klientem w ramach zamówienia.
+          </p>
+
+          <p>
+            Klient odpowiada za posiadanie odpowiednich praw
+            do przekazanych materiałów, takich jak zdjęcia,
+            teksty, logotypy lub grafiki.
+          </p>
+
+          <p>
+            Materiały objęte prawami osób trzecich powinny być
+            używane wyłącznie wtedy, gdy klient posiada
+            odpowiednie uprawnienia do ich wykorzystania.
+          </p>
+
+        </section>
+
+
+
+        <!-- 10 -->
+
+        <section
+          class="rule-section"
+          id="rezygnacja"
+        >
+
+          <span class="rule-number">
+            Punkt 10
+          </span>
+
+          <h2>
+            Rezygnacja z realizacji
+          </h2>
+
+          <p>
+            Jeżeli klient chce zrezygnować z realizacji,
+            powinien jak najszybciej skontaktować się
+            z WebNexo.pl.
+          </p>
+
+          <p>
+            Sposób rozliczenia wykonanej już pracy jest
+            ustalany z uwzględnieniem faktycznie wykonanego
+            zakresu projektu oraz obowiązujących przepisów.
+          </p>
+
+          <p>
+            Prawa konsumenta wynikające z obowiązujących
+            przepisów prawa pozostają bez zmian.
+          </p>
+
+        </section>
+
+
+
+        <!-- 11 -->
+
+        <section
+          class="rule-section"
+          id="reklamacje"
+        >
+
+          <span class="rule-number">
+            Punkt 11
+          </span>
+
+          <h2>
+            Reklamacje
+          </h2>
+
+          <p>
+            W przypadku problemów z wykonaną usługą klient
+            może skontaktować się poprzez:
+          </p>
+
+          <p>
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>
+          </p>
+
+          <p>
+            Wiadomość powinna zawierać opis problemu
+            oraz informacje pozwalające zidentyfikować projekt.
+          </p>
+
+        </section>
+
+
+
+        <!-- 12 -->
+
+        <section
+          class="rule-section"
+          id="kontakt"
+        >
+
+          <span class="rule-number">
+            Punkt 12
+          </span>
+
+          <h2>
+            Kontakt
+          </h2>
+
+          <p>
+            W sprawach dotyczących zamówień, płatności,
+            realizacji oraz regulaminu możesz skontaktować
+            się poprzez e-mail:
+          </p>
+
+          <p>
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>
+          </p>
+
+        </section>
+
+
+
+        <!-- WAŻNA INFORMACJA -->
+
+        <div class="important">
+
+          Regulamin stanowi ogólny opis zasad współpracy.
+          Szczegóły konkretnego projektu, takie jak cena,
+          termin, zakres realizacji i sposób płatności,
+          są ustalane indywidualnie przed rozpoczęciem prac.
+
+        </div>
+
+
+
+        <!-- KONTAKT -->
+
+        <div class="contact">
+
+          <h2>
+            Masz pytanie?
+          </h2>
+
+          <p>
+            Napisz przed złożeniem zamówienia.
+          </p>
+
+          <a
+            href="mailto:kontakt.webnexo@gmail.com"
+            class="contact-button"
+          >
+            kontakt.webnexo@gmail.com
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =========================
+       STOPKA
+  ========================= -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <div>
+        © 2026 WebNexo.pl
+      </div>
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Strona główna
+        </a>
+
+        <a href="platnosci.html">
+          Płatności
+        </a>
+
+        <a href="regulamin.html">
+          Regulamin
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================
+       MENU TELEFON
+  ========================= -->
+
+  <script>
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", function () {
+
+      navLinks.classList.toggle("active");
+
+      const opened =
+        navLinks.classList.contains("active");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        opened
+      );
+
+      if (opened) {
+        menuBtn.textContent = "✕";
+      } else {
+        menuBtn.textContent = "☰";
+      }
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove("active");
+
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 850) {
+
+          navLinks.classList.remove("active");
+
+          menuBtn.textContent = "☰";
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
