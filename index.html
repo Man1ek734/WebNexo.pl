@@ -528,7 +528,7 @@
     .portfolio-grid {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       gap: 18px;
 
@@ -565,16 +565,12 @@
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .portfolio-preview.restaurant {
-      background: linear-gradient(135deg, #301914, #b35a35);
+    .portfolio-preview.wlostow {
+      background: linear-gradient(135deg, #0b3b2e, #2d9b70);
     }
 
-    .portfolio-preview.construction {
-      background: linear-gradient(135deg, #17202a, #52677a);
-    }
-
-    .portfolio-preview.product {
-      background: linear-gradient(135deg, #241a54, #7057e8);
+    .portfolio-preview.musica {
+      background: linear-gradient(135deg, #18122d, #7657c8);
     }
 
     .preview-window {
@@ -685,6 +681,25 @@
       color: #8d8f9a;
 
       font-size: 14px;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+
+      margin-top: 18px;
+
+      color: #a795ff;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition: 0.2s;
+    }
+
+    .portfolio-link:hover {
+      color: #ffffff;
+
+      transform: translateX(3px);
     }
 
     /* =========================
@@ -1548,7 +1563,7 @@
 
           <article class="portfolio-card">
 
-            <div class="portfolio-preview restaurant">
+            <div class="portfolio-preview wlostow">
 
               <div class="preview-window">
 
@@ -1557,8 +1572,8 @@
                 </div>
 
                 <div class="preview-content">
-                  <small>Restauracja</small>
-                  <strong>Smak, który zapamiętasz.</strong>
+                  <small>Powiat Opatowski</small>
+                  <strong>Włostów — przestrzeń dla biznesu.</strong>
                   <i></i>
                 </div>
 
@@ -1568,14 +1583,23 @@
 
             <div class="portfolio-info">
 
-              <span class="portfolio-type">Gastronomia</span>
+              <span class="portfolio-type">Strona informacyjna</span>
 
-              <h3>Restauracja Verde</h3>
+              <h3>Wlostow.pl</h3>
 
               <p>
-                Elegancka strona restauracji z menu, galerią,
-                godzinami otwarcia i możliwością rezerwacji.
+                Strona prezentująca Inkubator Przemysłowy, Manufakturę,
+                ofertę Powiatu Opatowskiego oraz najważniejsze dane kontaktowe.
               </p>
+
+              <a
+                href="https://wlostow.pl"
+                class="portfolio-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zobacz stronę →
+              </a>
 
             </div>
 
@@ -1583,7 +1607,7 @@
 
           <article class="portfolio-card">
 
-            <div class="portfolio-preview construction">
+            <div class="portfolio-preview musica">
 
               <div class="preview-window">
 
@@ -1592,8 +1616,8 @@
                 </div>
 
                 <div class="preview-content">
-                  <small>Firma budowlana</small>
-                  <strong>Budujemy solidnie. Od podstaw.</strong>
+                  <small>Muzyka i edukacja</small>
+                  <strong>Rozwijaj swoją muzyczną pasję.</strong>
                   <i></i>
                 </div>
 
@@ -1603,55 +1627,29 @@
 
             <div class="portfolio-info">
 
-              <span class="portfolio-type">Budownictwo</span>
+              <span class="portfolio-type">Strona firmowa</span>
 
-              <h3>SolidDom</h3>
+              <h3>Studium Musica</h3>
 
               <p>
-                Profesjonalna wizytówka firmy z ofertą usług,
-                zdjęciami realizacji i szybkim formularzem kontaktowym.
+                Nowoczesna strona szkoły muzycznej przedstawiająca ofertę,
+                działalność, aktualności oraz informacje kontaktowe.
               </p>
+
+              <a
+                href="https://studiummusica.pl"
+                class="portfolio-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zobacz stronę →
+              </a>
 
             </div>
 
           </article>
 
-          <article class="portfolio-card">
-
-            <div class="portfolio-preview product">
-
-              <div class="preview-window">
-
-                <div class="preview-bar">
-                  <span></span><span></span><span></span>
-                </div>
-
-                <div class="preview-content">
-                  <small>Nowy produkt</small>
-                  <strong>Prościej. Szybciej. Lepiej.</strong>
-                  <i></i>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="portfolio-info">
-
-              <span class="portfolio-type">Landing page</span>
-
-              <h3>Nexo One</h3>
-
-              <p>
-                Nowoczesna strona sprzedażowa produktu z mocnym
-                nagłówkiem, prezentacją korzyści i wezwaniem do działania.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
+        </div>       </div>
 
       </div>
 
