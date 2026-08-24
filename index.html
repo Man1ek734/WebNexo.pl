@@ -520,6 +520,173 @@
     }
 
 
+
+    /* =========================
+       REALIZACJE
+    ========================= */
+
+    .portfolio-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+
+      border-radius: 24px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.055),
+        rgba(255,255,255,0.015)
+      );
+
+      transition: 0.3s;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(124,92,255,0.35);
+    }
+
+    .portfolio-preview {
+      height: 220px;
+
+      padding: 18px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .portfolio-preview.restaurant {
+      background: linear-gradient(135deg, #301914, #b35a35);
+    }
+
+    .portfolio-preview.construction {
+      background: linear-gradient(135deg, #17202a, #52677a);
+    }
+
+    .portfolio-preview.product {
+      background: linear-gradient(135deg, #241a54, #7057e8);
+    }
+
+    .preview-window {
+      height: 100%;
+
+      overflow: hidden;
+
+      border-radius: 14px;
+
+      background: #f7f7f7;
+
+      color: #151515;
+
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .preview-bar {
+      height: 28px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 5px;
+
+      padding: 0 10px;
+
+      background: #e8e8e8;
+    }
+
+    .preview-bar span {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: #b8b8b8;
+    }
+
+    .preview-content {
+      height: calc(100% - 28px);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 18px;
+
+      text-align: center;
+    }
+
+    .preview-content small {
+      margin-bottom: 7px;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+    .preview-content strong {
+      max-width: 220px;
+
+      font-size: 23px;
+
+      line-height: 1.05;
+    }
+
+    .preview-content i {
+      width: 62px;
+      height: 7px;
+
+      margin-top: 14px;
+
+      border-radius: 20px;
+
+      background: currentColor;
+
+      opacity: 0.22;
+    }
+
+    .portfolio-info {
+      padding: 26px;
+    }
+
+    .portfolio-type {
+      color: #a795ff;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+    }
+
+    .portfolio-info h3 {
+      margin-top: 8px;
+
+      font-size: 22px;
+    }
+
+    .portfolio-info p {
+      margin-top: 9px;
+
+      color: #8d8f9a;
+
+      font-size: 14px;
+    }
+
     /* =========================
        CENNIK
     ========================= */
@@ -781,7 +948,8 @@
         text-align: center;
       }
 
-      .cards {
+      .cards,
+      .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
@@ -882,7 +1050,8 @@
         letter-spacing: -2px;
       }
 
-      .cards {
+      .cards,
+      .portfolio-grid {
         margin-top: 40px;
       }
 
@@ -1084,6 +1253,10 @@
 
         <a href="#oferta">
           Oferta
+        </a>
+
+        <a href="#realizacje">
+          Realizacje
         </a>
 
         <a href="#cennik">
@@ -1341,6 +1514,148 @@
 
     </section>
 
+
+
+
+    <!-- =========================
+         REALIZACJE
+    ========================= -->
+
+    <section id="realizacje">
+
+      <div class="container">
+
+        <p class="section-label">
+          Realizacje / Portfolio
+        </p>
+
+        <h2 class="section-title">
+
+          Zobacz przykładowe<br>
+
+          projekty stron.
+
+        </h2>
+
+        <p class="section-description">
+
+          Każdy projekt tworzę indywidualnie — od układu i kolorystyki
+          po dopasowanie do telefonów i komputerów.
+
+        </p>
+
+        <div class="portfolio-grid">
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-preview restaurant">
+
+              <div class="preview-window">
+
+                <div class="preview-bar">
+                  <span></span><span></span><span></span>
+                </div>
+
+                <div class="preview-content">
+                  <small>Restauracja</small>
+                  <strong>Smak, który zapamiętasz.</strong>
+                  <i></i>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="portfolio-info">
+
+              <span class="portfolio-type">Gastronomia</span>
+
+              <h3>Restauracja Verde</h3>
+
+              <p>
+                Elegancka strona restauracji z menu, galerią,
+                godzinami otwarcia i możliwością rezerwacji.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-preview construction">
+
+              <div class="preview-window">
+
+                <div class="preview-bar">
+                  <span></span><span></span><span></span>
+                </div>
+
+                <div class="preview-content">
+                  <small>Firma budowlana</small>
+                  <strong>Budujemy solidnie. Od podstaw.</strong>
+                  <i></i>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="portfolio-info">
+
+              <span class="portfolio-type">Budownictwo</span>
+
+              <h3>SolidDom</h3>
+
+              <p>
+                Profesjonalna wizytówka firmy z ofertą usług,
+                zdjęciami realizacji i szybkim formularzem kontaktowym.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="portfolio-card">
+
+            <div class="portfolio-preview product">
+
+              <div class="preview-window">
+
+                <div class="preview-bar">
+                  <span></span><span></span><span></span>
+                </div>
+
+                <div class="preview-content">
+                  <small>Nowy produkt</small>
+                  <strong>Prościej. Szybciej. Lepiej.</strong>
+                  <i></i>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="portfolio-info">
+
+              <span class="portfolio-type">Landing page</span>
+
+              <h3>Nexo One</h3>
+
+              <p>
+                Nowoczesna strona sprzedażowa produktu z mocnym
+                nagłówkiem, prezentacją korzyści i wezwaniem do działania.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- =========================
