@@ -573,6 +573,27 @@
       background: linear-gradient(135deg, #18122d, #7657c8);
     }
 
+    .portfolio-preview > img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      border-radius: 14px;
+
+      object-fit: cover;
+
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .portfolio-preview.musica > img {
+      padding: 10px;
+
+      background: #ffffff;
+
+      object-fit: contain;
+    }
+
     .preview-window {
       height: 100%;
 
@@ -1565,19 +1586,11 @@
 
             <div class="portfolio-preview wlostow">
 
-              <div class="preview-window">
-
-                <div class="preview-bar">
-                  <span></span><span></span><span></span>
-                </div>
-
-                <div class="preview-content">
-                  <small>Powiat Opatowski</small>
-                  <strong>Włostów — przestrzeń dla biznesu.</strong>
-                  <i></i>
-                </div>
-
-              </div>
+              <img
+                src="realizacja-wlostow.jpg"
+                alt="Inkubator Przemysłowy we Włostowie"
+                loading="lazy"
+              >
 
             </div>
 
@@ -1609,19 +1622,11 @@
 
             <div class="portfolio-preview musica">
 
-              <div class="preview-window">
-
-                <div class="preview-bar">
-                  <span></span><span></span><span></span>
-                </div>
-
-                <div class="preview-content">
-                  <small>Muzyka i edukacja</small>
-                  <strong>Rozwijaj swoją muzyczną pasję.</strong>
-                  <i></i>
-                </div>
-
-              </div>
+              <img
+                src="realizacja-musica.jpg"
+                alt="Logo Musica Studium Muzyczne Urszula Staniek"
+                loading="lazy"
+              >
 
             </div>
 
