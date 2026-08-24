@@ -9,6 +9,8 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
+  <meta name="theme-color" content="#08090c">
+
   <title>Regulamin — WebNexo.pl</title>
 
   <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
@@ -663,6 +665,209 @@
 
       .footer-links {
         flex-wrap: wrap;
+      }
+
+    }
+
+  
+    /* =========================
+       KOŃCOWE DOPRACOWANIE MOBILE
+    ========================= */
+
+    img {
+      max-width: 100%;
+    }
+
+    @media (max-width: 850px) {
+
+      nav .nav-container {
+        width: 100%;
+        max-width: 100%;
+        height: 70px;
+
+        margin: 0;
+        padding:
+          0 max(16px, env(safe-area-inset-right))
+          0 max(16px, env(safe-area-inset-left));
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      nav .logo,
+      nav .logo img {
+        width: 155px;
+        height: 50px;
+      }
+
+      nav .logo {
+        flex-shrink: 0;
+      }
+
+      nav .logo img {
+        object-fit: cover;
+      }
+
+      nav .menu-btn {
+        display: flex !important;
+
+        position: static !important;
+
+        margin-left: auto;
+
+        transform: none !important;
+
+        color: #ffffff;
+
+        font-size: 25px;
+        line-height: 1;
+
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      nav .nav-links {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        max-height: calc(100dvh - 70px);
+
+        margin: 0;
+        padding:
+          12px max(14px, env(safe-area-inset-right))
+          max(20px, env(safe-area-inset-bottom))
+          max(14px, env(safe-area-inset-left));
+
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        z-index: 1100;
+      }
+
+      nav .nav-links a {
+        min-height: 46px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 11px 14px;
+      }
+
+      nav .contact-btn {
+        justify-content: center;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      a {
+        overflow-wrap: break-word;
+      }
+
+      footer {
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
+      }
+
+    }
+
+    @media (max-width: 360px) {
+
+      nav .logo,
+      nav .logo img {
+        width: 138px;
+      }
+
+      nav .menu-btn {
+        width: 44px;
+        height: 44px;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding-top: 118px;
+        padding-bottom: 48px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 11vw, 46px);
+        line-height: 1.02;
+        letter-spacing: -2.5px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .rules {
+        padding-bottom: 64px;
+      }
+
+      .rules-layout {
+        gap: 20px;
+      }
+
+      .toc {
+        padding: 18px;
+
+        border-radius: 18px;
+      }
+
+      .toc a {
+        padding: 9px 0;
+      }
+
+      .rule-section {
+        padding: 22px 18px;
+
+        border-radius: 18px;
+      }
+
+      .rule-section h2 {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      .rule-section p,
+      .rule-section li {
+        font-size: 15px;
+      }
+
+      .rule-section ul,
+      .rule-section ol {
+        padding-left: 20px;
+      }
+
+      .contact {
+        padding: 38px 18px;
+
+        border-radius: 22px;
+      }
+
+      .contact h2 {
+        font-size: 32px;
+      }
+
+      .footer-links {
+        gap: 12px 18px;
       }
 
     }
