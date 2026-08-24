@@ -971,6 +971,70 @@
 
   </style>
 
+  /* =========================
+   POPRAWKA MENU NA TELEFONIE
+========================= */
+
+@media (max-width: 850px) {
+
+  nav .nav-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 16px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .logo {
+    width: 155px;
+    height: 50px;
+
+    flex-shrink: 0;
+  }
+
+  nav .logo img {
+    width: 155px;
+    height: 50px;
+  }
+
+  nav .menu-btn {
+    display: flex !important;
+
+    position: absolute;
+
+    right: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    margin: 0;
+
+    z-index: 1200;
+
+    flex-shrink: 0;
+  }
+
+  nav .nav-links {
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    margin: 0;
+
+    z-index: 1100;
+  }
+
+}
+
 </head>
 
 
