@@ -13,14 +13,10 @@
 
   <meta
     name="description"
-    content="WebNexo.pl — nowoczesne strony internetowe tworzone na zamówienie."
+    content="WebNexo.pl — nowoczesne, szybkie i responsywne strony internetowe na zamówienie."
   >
 
   <style>
-
-    /* =========================
-       PODSTAWY
-    ========================= */
 
     * {
       margin: 0;
@@ -35,17 +31,10 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-
       background: #08090c;
       color: #ffffff;
-
       line-height: 1.6;
-
       overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
     }
 
     a {
@@ -73,7 +62,6 @@
 
     nav {
       position: fixed;
-
       top: 0;
       left: 0;
 
@@ -81,12 +69,12 @@
 
       z-index: 1000;
 
-      background: rgba(8, 9, 12, 0.84);
+      background: rgba(8, 9, 12, 0.88);
 
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     .nav-container {
@@ -96,18 +84,18 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 25px;
+      gap: 30px;
     }
 
 
     /* LOGO */
 
     .logo {
+      width: 220px;
+      height: 58px;
+
       display: flex;
       align-items: center;
-
-      width: 220px;
-      height: 60px;
 
       overflow: hidden;
 
@@ -116,7 +104,7 @@
 
     .logo img {
       width: 220px;
-      height: 60px;
+      height: 58px;
 
       object-fit: cover;
       object-position: center;
@@ -125,28 +113,33 @@
     }
 
 
-    /* LINKI */
+    /* MENU PC */
 
     .nav-links {
       display: flex;
       align-items: center;
 
-      gap: 28px;
+      gap: 27px;
     }
 
     .nav-links a {
-      font-size: 15px;
-
       color: #b9bbc5;
+
+      font-size: 15px;
 
       transition: 0.2s;
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: white;
     }
 
-    .nav-btn {
+    .active-link {
+      color: #a795ff !important;
+      font-weight: 700;
+    }
+
+    .contact-btn {
       padding: 11px 18px;
 
       border-radius: 12px;
@@ -156,25 +149,31 @@
       color: #08090c !important;
 
       font-weight: 700;
+
+      transition: 0.2s;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
     }
 
 
-    /* MENU MOBILE */
+    /* 3 KRESKI */
 
     .menu-btn {
       display: none;
 
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
 
       align-items: center;
       justify-content: center;
 
+      border-radius: 12px;
+
+      border: 1px solid rgba(255,255,255,0.10);
+
       background: rgba(255,255,255,0.05);
-
-      border: 1px solid rgba(255,255,255,0.08);
-
-      border-radius: 11px;
 
       color: white;
 
@@ -208,8 +207,8 @@
       width: 550px;
       height: 550px;
 
-      right: -160px;
       top: 40px;
+      right: -160px;
 
       border-radius: 50%;
 
@@ -340,8 +339,6 @@
       font-weight: 700;
 
       transition: 0.25s;
-
-      cursor: pointer;
     }
 
     .btn-primary {
@@ -367,9 +364,6 @@
       transform: translateY(-3px);
     }
 
-
-    /* STATYSTYKI */
-
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
@@ -393,7 +387,7 @@
 
 
     /* =========================
-       NAGŁÓWKI
+       SEKCJE
     ========================= */
 
     .section-label {
@@ -443,14 +437,13 @@
     }
 
     .card {
-      min-width: 0;
       min-height: 290px;
 
       padding: 30px;
 
-      border: 1px solid rgba(255,255,255,0.08);
-
       border-radius: 24px;
+
+      border: 1px solid rgba(255,255,255,0.08);
 
       background: linear-gradient(
         145deg,
@@ -513,9 +506,9 @@
 
       padding: 45px;
 
-      border: 1px solid rgba(255,255,255,0.09);
-
       border-radius: 28px;
+
+      border: 1px solid rgba(255,255,255,0.09);
 
       background:
         radial-gradient(
@@ -524,10 +517,6 @@
           transparent 35%
         ),
         rgba(255,255,255,0.035);
-    }
-
-    .price-left {
-      min-width: 0;
     }
 
     .price-label {
@@ -564,8 +553,6 @@
 
     .price-info {
       max-width: 500px;
-
-      min-width: 0;
     }
 
     .price-info h3 {
@@ -602,8 +589,6 @@
     }
 
     .process-item {
-      min-width: 0;
-
       padding: 25px;
 
       border-left: 2px solid #7c5cff;
@@ -641,9 +626,9 @@
     .contact-box {
       padding: 80px 30px;
 
-      border: 1px solid rgba(255,255,255,0.08);
-
       border-radius: 30px;
+
+      border: 1px solid rgba(255,255,255,0.08);
 
       background:
         radial-gradient(
@@ -707,63 +692,11 @@
     }
 
 
-    /* =================================
-       TABLET
-    ================================= */
+    /* =========================
+       TABLET / TELEFON
+    ========================= */
 
-    @media (max-width: 950px) {
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .price-box {
-        flex-direction: column;
-
-        align-items: flex-start;
-      }
-
-      .price-info {
-        max-width: 100%;
-      }
-
-    }
-
-
-    /* =================================
-       TELEFON
-    ================================= */
-
-    @media (max-width: 700px) {
-
-      html {
-        scroll-padding-top: 75px;
-      }
-
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-
-      /* MENU */
-
-      .nav-container {
-        height: 70px;
-      }
-
-      .logo {
-        width: 170px;
-        height: 52px;
-      }
-
-      .logo img {
-        width: 170px;
-        height: 52px;
-      }
+    @media (max-width: 850px) {
 
       .menu-btn {
         display: flex;
@@ -774,20 +707,24 @@
 
         position: absolute;
 
-        top: 70px;
+        top: 78px;
         left: 0;
 
         width: 100%;
 
-        padding: 15px 14px 20px;
+        padding: 15px 20px 22px;
 
         flex-direction: column;
 
+        align-items: stretch;
+
         gap: 5px;
 
-        background: rgba(8,9,12,0.98);
+        background: rgba(8, 9, 12, 0.98);
 
         border-bottom: 1px solid rgba(255,255,255,0.08);
+
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       }
 
       .nav-links.active {
@@ -804,18 +741,63 @@
         font-size: 16px;
       }
 
-      .nav-links a:not(.nav-btn):hover {
-        background: rgba(255,255,255,0.04);
+      .nav-links a:not(.contact-btn):hover {
+        background: rgba(255,255,255,0.05);
       }
 
-      .nav-btn {
-        margin-top: 8px;
+      .contact-btn {
+        margin-top: 7px;
 
         text-align: center;
       }
 
+      .cards {
+        grid-template-columns: 1fr;
+      }
 
-      /* HERO */
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .price-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+
+    /* =========================
+       TELEFON
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .nav-container {
+        height: 70px;
+      }
+
+      .logo {
+        width: 165px;
+        height: 50px;
+      }
+
+      .logo img {
+        width: 165px;
+        height: 50px;
+      }
+
+      .nav-links {
+        top: 70px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+      }
 
       .hero {
         min-height: auto;
@@ -824,44 +806,22 @@
         padding-bottom: 75px;
       }
 
-      .hero::before {
-        width: 350px;
-        height: 350px;
-
-        right: -180px;
-      }
-
-      .hero::after {
-        width: 300px;
-        height: 300px;
-      }
-
-      .badge {
-        font-size: 12px;
-      }
-
       h1 {
-        font-size: clamp(44px, 14vw, 64px);
+        font-size: 46px;
 
         line-height: 1;
 
         letter-spacing: -3px;
-
-        overflow-wrap: anywhere;
       }
 
       .hero-description {
-        margin-top: 24px;
-
         font-size: 16px;
       }
 
       .hero-buttons {
-        width: 100%;
-
         flex-direction: column;
 
-        margin-top: 30px;
+        width: 100%;
       }
 
       .hero-buttons .btn {
@@ -873,8 +833,6 @@
 
         grid-template-columns: 1fr 1fr;
 
-        width: 100%;
-
         gap: 25px 15px;
 
         margin-top: 50px;
@@ -883,13 +841,6 @@
       .stat:last-child {
         grid-column: 1 / -1;
       }
-
-      .stat strong {
-        font-size: 20px;
-      }
-
-
-      /* SEKCJE */
 
       section {
         padding: 75px 0;
@@ -900,13 +851,6 @@
 
         letter-spacing: -2px;
       }
-
-      .section-description {
-        font-size: 16px;
-      }
-
-
-      /* OFERTA */
 
       .cards {
         margin-top: 40px;
@@ -922,9 +866,6 @@
         margin-top: 30px;
       }
 
-
-      /* CENNIK */
-
       .price-box {
         gap: 32px;
 
@@ -934,34 +875,22 @@
       }
 
       .price-big {
-        width: 100%;
-
         gap: 8px;
 
-        white-space: normal;
-
         flex-wrap: wrap;
+
+        white-space: normal;
 
         font-size: clamp(38px, 11vw, 52px);
 
         letter-spacing: -1.5px;
       }
 
-      .price-info h3 {
-        font-size: 21px;
-      }
-
-
-      /* JAK TO DZIAŁA */
-
       .process {
         grid-template-columns: 1fr;
 
         margin-top: 40px;
       }
-
-
-      /* KONTAKT */
 
       .contact-box {
         padding: 55px 20px;
@@ -977,9 +906,6 @@
         width: 100%;
       }
 
-
-      /* STOPKA */
-
       .footer-flex {
         flex-direction: column;
 
@@ -989,15 +915,7 @@
     }
 
 
-    /* =================================
-       BARDZO MAŁE TELEFONY
-    ================================= */
-
-    @media (max-width: 400px) {
-
-      .container {
-        width: calc(100% - 22px);
-      }
+    @media (max-width: 380px) {
 
       .logo {
         width: 145px;
@@ -1008,7 +926,7 @@
       }
 
       h1 {
-        font-size: 42px;
+        font-size: 40px;
       }
 
       .hero-stats {
@@ -1019,34 +937,29 @@
         grid-column: auto;
       }
 
-      .price-big {
-        font-size: 34px;
-      }
-
-      .section-title {
-        font-size: 34px;
-      }
-
-      .contact-box h2 {
-        font-size: 36px;
-      }
-
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- MENU -->
+  <!-- =========================
+       MENU
+  ========================= -->
 
   <nav>
 
     <div class="container nav-container">
 
-      <a href="#start" class="logo">
+
+      <a
+        href="#start"
+        class="logo"
+      >
 
         <img
           src="logo24.png"
@@ -1056,20 +969,32 @@
       </a>
 
 
+      <!-- 3 KRESKI NA TELEFONIE -->
+
       <button
         class="menu-btn"
         id="menuBtn"
-        onclick="toggleMenu()"
+        type="button"
         aria-label="Otwórz menu"
+        aria-expanded="false"
       >
         ☰
       </button>
 
 
+      <!-- MENU -->
+
       <div
         class="nav-links"
         id="navLinks"
       >
+
+        <a
+          href="#start"
+          class="active-link"
+        >
+          Strona główna
+        </a>
 
         <a href="#oferta">
           Oferta
@@ -1083,24 +1008,32 @@
           Jak to działa
         </a>
 
+        <a href="platnosci.html">
+          Płatności
+        </a>
+
         <a
           href="#kontakt"
-          class="nav-btn"
+          class="contact-btn"
         >
-          Napisz do mnie
+          Kontakt
         </a>
 
       </div>
+
 
     </div>
 
   </nav>
 
 
+
   <main>
 
 
-    <!-- STRONA GŁÓWNA -->
+    <!-- =========================
+         START
+    ========================= -->
 
     <section
       class="hero"
@@ -1161,6 +1094,7 @@
 
           <div class="hero-stats">
 
+
             <div class="stat">
 
               <strong>
@@ -1199,7 +1133,9 @@
 
             </div>
 
+
           </div>
+
 
         </div>
 
@@ -1208,11 +1144,15 @@
     </section>
 
 
-    <!-- OFERTA -->
+
+    <!-- =========================
+         OFERTA
+    ========================= -->
 
     <section id="oferta">
 
       <div class="container">
+
 
         <p class="section-label">
           Oferta
@@ -1250,11 +1190,14 @@
             </h3>
 
             <p>
+
               Prosta i efektowna strona z wszystkimi najważniejszymi
               informacjami w jednym miejscu.
+
             </p>
 
           </div>
+
 
 
           <div class="card">
@@ -1268,11 +1211,14 @@
             </h3>
 
             <p>
+
               Kilka podstron, oferta, galeria, kontakt i wszystko,
               czego potrzebujesz do pokazania swojej działalności.
+
             </p>
 
           </div>
+
 
 
           <div class="card">
@@ -1286,8 +1232,10 @@
             </h3>
 
             <p>
+
               Bardziej rozbudowana strona, dodatkowe funkcje,
               formularze, logowanie lub połączenie z bazą danych.
+
             </p>
 
           </div>
@@ -1300,11 +1248,15 @@
     </section>
 
 
-    <!-- CENNIK -->
+
+    <!-- =========================
+         CENNIK
+    ========================= -->
 
     <section id="cennik">
 
       <div class="container">
+
 
         <p class="section-label">
           Cennik
@@ -1323,7 +1275,7 @@
         <div class="price-box">
 
 
-          <div class="price-left">
+          <div>
 
             <p class="price-label">
               Projekty od
@@ -1349,16 +1301,21 @@
           </div>
 
 
+
           <div class="price-info">
 
             <h3>
               Każdy projekt wyceniam indywidualnie.
             </h3>
 
+
             <p>
+
               Cena zależy od liczby podstron, wyglądu oraz funkcji,
               które mają znaleźć się na stronie.
+
             </p>
+
 
             <p class="database">
 
@@ -1380,11 +1337,15 @@
     </section>
 
 
-    <!-- JAK TO DZIAŁA -->
+
+    <!-- =========================
+         JAK TO DZIAŁA
+    ========================= -->
 
     <section id="jak-to-dziala">
 
       <div class="container">
+
 
         <p class="section-label">
           Jak to działa
@@ -1405,7 +1366,9 @@
 
           <div class="process-item">
 
-            <span>01</span>
+            <span>
+              01
+            </span>
 
             <h3>
               Kontakt
@@ -1420,7 +1383,9 @@
 
           <div class="process-item">
 
-            <span>02</span>
+            <span>
+              02
+            </span>
 
             <h3>
               Wycena
@@ -1435,7 +1400,9 @@
 
           <div class="process-item">
 
-            <span>03</span>
+            <span>
+              03
+            </span>
 
             <h3>
               Realizacja
@@ -1450,7 +1417,9 @@
 
           <div class="process-item">
 
-            <span>04</span>
+            <span>
+              04
+            </span>
 
             <h3>
               Gotowe
@@ -1470,7 +1439,10 @@
     </section>
 
 
-    <!-- KONTAKT -->
+
+    <!-- =========================
+         KONTAKT
+    ========================= -->
 
     <section
       id="kontakt"
@@ -1480,6 +1452,7 @@
       <div class="container">
 
         <div class="contact-box">
+
 
           <p class="section-label">
             Masz pomysł?
@@ -1520,6 +1493,7 @@
             kontakt.webnexo@gmail.com
           </a>
 
+
         </div>
 
       </div>
@@ -1530,7 +1504,10 @@
   </main>
 
 
-  <!-- STOPKA -->
+
+  <!-- =========================
+       STOPKA
+  ========================= -->
 
   <footer>
 
@@ -1549,60 +1526,96 @@
   </footer>
 
 
+
+  <!-- =========================
+       MENU NA TELEFONIE
+  ========================= -->
+
   <script>
 
-    function toggleMenu() {
+    const menuBtn =
+      document.getElementById("menuBtn");
 
-      const menu = document.getElementById("navLinks");
-      const button = document.getElementById("menuBtn");
+    const navLinks =
+      document.getElementById("navLinks");
 
-      menu.classList.toggle("active");
 
-      if (menu.classList.contains("active")) {
-        button.innerHTML = "✕";
+    menuBtn.addEventListener("click", function () {
+
+      navLinks.classList.toggle("active");
+
+
+      const opened =
+        navLinks.classList.contains("active");
+
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        opened
+      );
+
+
+      if (opened) {
+
+        menuBtn.textContent = "✕";
+
       } else {
-        button.innerHTML = "☰";
-      }
 
-    }
-
-
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-          document
-            .getElementById("navLinks")
-            .classList
-            .remove("active");
-
-          document
-            .getElementById("menuBtn")
-            .innerHTML = "☰";
-
-        });
-
-      });
-
-
-    window.addEventListener("resize", () => {
-
-      if (window.innerWidth > 700) {
-
-        document
-          .getElementById("navLinks")
-          .classList
-          .remove("active");
-
-        document
-          .getElementById("menuBtn")
-          .innerHTML = "☰";
+        menuBtn.textContent = "☰";
 
       }
 
     });
+
+
+
+    /* Zamknięcie menu po kliknięciu opcji */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove("active");
+
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+
+
+    /* Reset menu po zwiększeniu ekranu */
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 850) {
+
+          navLinks.classList.remove("active");
+
+          menuBtn.textContent = "☰";
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
 
   </script>
 
