@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Nowoczesne strony internetowe tworzone na zamówienie. Strony wizytówki, strony firmowe i indywidualne projekty."
+    content="WebNexo.pl — nowoczesne strony internetowe tworzone na zamówienie. Strony wizytówki, strony firmowe i indywidualne projekty."
   >
 
   <style>
@@ -41,6 +41,10 @@
       margin: 0 auto;
     }
 
+    section {
+      padding: 110px 0;
+    }
+
 
     /* =========================
        MENU
@@ -50,17 +54,21 @@
       position: fixed;
       top: 0;
       left: 0;
+
       width: 100%;
+
       z-index: 1000;
 
-      background: rgba(8, 9, 12, 0.78);
+      background: rgba(8, 9, 12, 0.82);
+
       backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
 
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     .nav-container {
-      min-height: 74px;
+      height: 78px;
 
       display: flex;
       align-items: center;
@@ -69,26 +77,44 @@
       gap: 30px;
     }
 
+
+    /* LOGO */
+
     .logo {
+      width: 230px;
+      height: 58px;
+
       display: flex;
       align-items: center;
+
+      overflow: hidden;
     }
 
     .logo img {
-      height: 52px;
-      width: auto;
+      width: 230px;
+      height: 58px;
+
+      object-fit: cover;
+      object-position: center center;
+
       display: block;
     }
+
+
+    /* LINKI MENU */
 
     .nav-links {
       display: flex;
       align-items: center;
+
       gap: 30px;
     }
 
     .nav-links a {
       color: #b9bbc5;
+
       font-size: 15px;
+
       transition: 0.2s;
     }
 
@@ -102,9 +128,16 @@
       border-radius: 12px;
 
       background: #ffffff;
+
       color: #08090c !important;
 
       font-weight: 700;
+
+      transition: 0.25s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
     }
 
 
@@ -114,6 +147,7 @@
 
     .hero {
       min-height: 100vh;
+
       padding: 150px 0 100px;
 
       display: flex;
@@ -164,9 +198,10 @@
 
     .hero-content {
       position: relative;
+
       z-index: 2;
 
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .badge {
@@ -194,9 +229,9 @@
       width: 8px;
       height: 8px;
 
-      background: #62e6a6;
-
       border-radius: 50%;
+
+      background: #62e6a6;
 
       box-shadow: 0 0 15px #62e6a6;
     }
@@ -221,6 +256,8 @@
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
+      background-clip: text;
     }
 
     .hero-description {
@@ -243,6 +280,8 @@
     }
 
     .btn {
+      display: inline-block;
+
       padding: 15px 24px;
 
       border-radius: 14px;
@@ -257,6 +296,7 @@
 
     .btn-primary {
       background: #ffffff;
+
       color: #08090c;
     }
 
@@ -274,6 +314,8 @@
 
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.09);
+
+      transform: translateY(-3px);
     }
 
     .hero-stats {
@@ -299,12 +341,8 @@
 
 
     /* =========================
-       SEKCJE
+       NAGŁÓWKI SEKCJI
     ========================= */
-
-    section {
-      padding: 110px 0;
-    }
 
     .section-label {
       color: #7c5cff;
@@ -374,6 +412,8 @@
       transform: translateY(-6px);
 
       border-color: rgba(124, 92, 255, 0.35);
+
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
     }
 
     .card-number {
@@ -432,6 +472,14 @@
           transparent 35%
         ),
         rgba(255, 255, 255, 0.035);
+    }
+
+    .price-label {
+      color: #91939f;
+
+      font-size: 14px;
+
+      margin-bottom: 20px;
     }
 
     .price-big {
@@ -565,6 +613,16 @@
       color: #999ba6;
     }
 
+    .email-text {
+      display: block;
+
+      margin-top: 25px;
+
+      color: #a795ff;
+
+      font-size: 14px;
+    }
+
 
     /* =========================
        STOPKA
@@ -582,9 +640,7 @@
 
     .footer-flex {
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       gap: 20px;
@@ -592,7 +648,7 @@
 
 
     /* =========================
-       TELEFON
+       MENU TELEFON
     ========================= */
 
     .menu-btn {
@@ -609,6 +665,10 @@
       cursor: pointer;
     }
 
+
+    /* =========================
+       TABLET
+    ========================= */
 
     @media (max-width: 900px) {
 
@@ -629,10 +689,24 @@
     }
 
 
+    /* =========================
+       TELEFON
+    ========================= */
+
     @media (max-width: 700px) {
 
-      h1 {
-        letter-spacing: -3px;
+      .nav-container {
+        height: 70px;
+      }
+
+      .logo {
+        width: 180px;
+        height: 48px;
+      }
+
+      .logo img {
+        width: 180px;
+        height: 48px;
       }
 
       .menu-btn {
@@ -644,7 +718,7 @@
 
         position: absolute;
 
-        top: 74px;
+        top: 70px;
         left: 0;
 
         width: 100%;
@@ -674,8 +748,12 @@
         margin-top: 5px;
       }
 
+      h1 {
+        letter-spacing: -3px;
+      }
+
       .hero {
-        padding-top: 130px;
+        padding-top: 125px;
       }
 
       .hero-description {
@@ -694,12 +772,12 @@
         gap: 25px;
       }
 
-      .process {
-        grid-template-columns: 1fr;
-      }
-
       section {
         padding: 80px 0;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
       }
 
       .price-box {
@@ -707,7 +785,7 @@
       }
 
       .price-big {
-        font-size: clamp(35px, 10vw, 55px);
+        font-size: clamp(34px, 9vw, 50px);
 
         gap: 7px;
       }
@@ -721,27 +799,44 @@
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- MENU -->
+  <!-- =========================
+       MENU
+  ========================== -->
 
   <nav>
 
     <div class="container nav-container">
 
-      <a href="#" class="logo24">
-        <img src="logo24.png" alt="WebNexo.pl">
+      <a href="#start" class="logo">
+
+        <img
+          src="logo24.png"
+          alt="WebNexo.pl"
+        >
+
       </a>
 
-      <button class="menu-btn" onclick="toggleMenu()">
+
+      <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+        aria-label="Otwórz menu"
+      >
         ☰
       </button>
 
-      <div class="nav-links" id="navLinks">
+
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
 
         <a href="#oferta">
           Oferta
@@ -755,7 +850,10 @@
           Jak to działa
         </a>
 
-        <a href="#kontakt" class="nav-btn">
+        <a
+          href="#kontakt"
+          class="nav-btn"
+        >
           Napisz do mnie
         </a>
 
@@ -766,16 +864,23 @@
   </nav>
 
 
+
   <main>
 
 
-    <!-- STRONA GŁÓWNA -->
+    <!-- =========================
+         STRONA GŁÓWNA
+    ========================== -->
 
-    <section class="hero">
+    <section
+      class="hero"
+      id="start"
+    >
 
       <div class="container">
 
         <div class="hero-content">
+
 
           <div class="badge">
 
@@ -807,11 +912,17 @@
 
           <div class="hero-buttons">
 
-            <a href="#kontakt" class="btn btn-primary">
+            <a
+              href="#kontakt"
+              class="btn btn-primary"
+            >
               Wyceń swoją stronę →
             </a>
 
-            <a href="#oferta" class="btn btn-secondary">
+            <a
+              href="#oferta"
+              class="btn btn-secondary"
+            >
               Zobacz ofertę
             </a>
 
@@ -819,6 +930,7 @@
 
 
           <div class="hero-stats">
+
 
             <div class="stat">
 
@@ -858,6 +970,7 @@
 
             </div>
 
+
           </div>
 
         </div>
@@ -868,15 +981,19 @@
 
 
 
-    <!-- OFERTA -->
+    <!-- =========================
+         OFERTA
+    ========================== -->
 
     <section id="oferta">
 
       <div class="container">
 
+
         <p class="section-label">
           Oferta
         </p>
+
 
         <h2 class="section-title">
 
@@ -968,11 +1085,14 @@
 
 
 
-    <!-- CENNIK -->
+    <!-- =========================
+         CENNIK
+    ========================== -->
 
     <section id="cennik">
 
       <div class="container">
+
 
         <p class="section-label">
           Cennik
@@ -993,13 +1113,7 @@
 
           <div>
 
-            <p
-              style="
-                color: #91939f;
-                font-size: 14px;
-                margin-bottom: 20px;
-              "
-            >
+            <p class="price-label">
               Projekty od
             </p>
 
@@ -1060,11 +1174,14 @@
 
 
 
-    <!-- JAK TO DZIAŁA -->
+    <!-- =========================
+         JAK TO DZIAŁA
+    ========================== -->
 
     <section id="jak-to-dziala">
 
       <div class="container">
+
 
         <p class="section-label">
           Jak to działa
@@ -1095,7 +1212,7 @@
 
             <p>
 
-              Opisujesz mi czego potrzebujesz i jaki masz pomysł.
+              Opisujesz czego potrzebujesz i jaki masz pomysł.
 
             </p>
 
@@ -1155,7 +1272,8 @@
 
             <p>
 
-              Po zaakceptowaniu projektu strona jest gotowa do publikacji.
+              Po zaakceptowaniu projektu strona jest gotowa
+              do publikacji.
 
             </p>
 
@@ -1170,9 +1288,14 @@
 
 
 
-    <!-- KONTAKT -->
+    <!-- =========================
+         KONTAKT
+    ========================== -->
 
-    <section id="kontakt" class="contact">
+    <section
+      id="kontakt"
+      class="contact"
+    >
 
       <div class="container">
 
@@ -1206,9 +1329,17 @@
           <a
             href="mailto:kontakt.webnexo@gmail.com"
             class="btn btn-primary"
-         >
-           Napisz do mnie →
-         </a>
+          >
+            Napisz do mnie →
+          </a>
+
+
+          <a
+            href="mailto:kontakt.webnexo@gmail.com"
+            class="email-text"
+          >
+            kontakt.webnexo@gmail.com
+          </a>
 
 
         </div>
@@ -1222,7 +1353,9 @@
 
 
 
-  <!-- STOPKA -->
+  <!-- =========================
+       STOPKA
+  ========================== -->
 
   <footer>
 
@@ -1249,6 +1382,10 @@
   </footer>
 
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
   <script>
 
