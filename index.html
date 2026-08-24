@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
 
   <title>WebNexo.pl — Strony internetowe</title>
 
   <meta
     name="description"
-    content="WebNexo.pl — nowoczesne strony internetowe tworzone na zamówienie. Strony wizytówki, strony firmowe i indywidualne projekty."
+    content="WebNexo.pl — nowoczesne strony internetowe tworzone na zamówienie."
   >
 
   <style>
+
+    /* =========================
+       PODSTAWY
+    ========================= */
 
     * {
       margin: 0;
@@ -21,14 +30,22 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+
       background: #08090c;
       color: #ffffff;
+
       line-height: 1.6;
+
       overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     a {
@@ -36,8 +53,12 @@
       color: inherit;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .container {
-      width: min(1180px, 90%);
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -52,6 +73,7 @@
 
     nav {
       position: fixed;
+
       top: 0;
       left: 0;
 
@@ -59,12 +81,12 @@
 
       z-index: 1000;
 
-      background: rgba(8, 9, 12, 0.82);
+      background: rgba(8, 9, 12, 0.84);
 
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
     .nav-container {
@@ -74,46 +96,48 @@
       align-items: center;
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 25px;
     }
 
 
     /* LOGO */
 
     .logo {
-      width: 230px;
-      height: 58px;
-
       display: flex;
       align-items: center;
 
+      width: 220px;
+      height: 60px;
+
       overflow: hidden;
+
+      flex-shrink: 0;
     }
 
     .logo img {
-      width: 230px;
-      height: 58px;
+      width: 220px;
+      height: 60px;
 
       object-fit: cover;
-      object-position: center center;
+      object-position: center;
 
       display: block;
     }
 
 
-    /* LINKI MENU */
+    /* LINKI */
 
     .nav-links {
       display: flex;
       align-items: center;
 
-      gap: 30px;
+      gap: 28px;
     }
 
     .nav-links a {
-      color: #b9bbc5;
-
       font-size: 15px;
+
+      color: #b9bbc5;
 
       transition: 0.2s;
     }
@@ -132,12 +156,31 @@
       color: #08090c !important;
 
       font-weight: 700;
-
-      transition: 0.25s;
     }
 
-    .nav-btn:hover {
-      transform: translateY(-2px);
+
+    /* MENU MOBILE */
+
+    .menu-btn {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.05);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      border-radius: 11px;
+
+      color: white;
+
+      font-size: 24px;
+
+      cursor: pointer;
     }
 
 
@@ -148,7 +191,8 @@
     .hero {
       min-height: 100vh;
 
-      padding: 150px 0 100px;
+      padding-top: 160px;
+      padding-bottom: 100px;
 
       display: flex;
       align-items: center;
@@ -164,8 +208,8 @@
       width: 550px;
       height: 550px;
 
-      top: 50px;
-      right: -150px;
+      right: -160px;
+      top: 40px;
 
       border-radius: 50%;
 
@@ -184,8 +228,8 @@
       width: 400px;
       height: 400px;
 
-      bottom: 0;
       left: -200px;
+      bottom: 0;
 
       border-radius: 50%;
 
@@ -197,53 +241,54 @@
     }
 
     .hero-content {
+      max-width: 900px;
+
       position: relative;
 
       z-index: 2;
-
-      max-width: 900px;
     }
 
     .badge {
       display: inline-flex;
+
       align-items: center;
 
-      gap: 10px;
+      gap: 9px;
 
       padding: 8px 13px;
 
+      margin-bottom: 25px;
+
       border-radius: 50px;
 
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.10);
 
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255,255,255,0.04);
 
       color: #c7c8d0;
 
       font-size: 14px;
-
-      margin-bottom: 25px;
     }
 
     .badge-dot {
       width: 8px;
       height: 8px;
 
-      border-radius: 50%;
-
       background: #62e6a6;
+
+      border-radius: 50%;
 
       box-shadow: 0 0 15px #62e6a6;
     }
 
     h1 {
+      max-width: 1000px;
+
       font-size: clamp(50px, 7vw, 92px);
 
       line-height: 0.98;
 
       letter-spacing: -5px;
-
-      max-width: 1000px;
     }
 
     .gradient-text {
@@ -261,13 +306,13 @@
     }
 
     .hero-description {
-      margin-top: 30px;
-
       max-width: 650px;
 
-      font-size: 19px;
+      margin-top: 30px;
 
       color: #a8aab5;
+
+      font-size: 19px;
     }
 
     .hero-buttons {
@@ -280,9 +325,14 @@
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
 
-      padding: 15px 24px;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding: 14px 24px;
 
       border-radius: 14px;
 
@@ -296,35 +346,37 @@
 
     .btn-primary {
       background: #ffffff;
-
       color: #08090c;
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
 
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.12);
+      box-shadow: 0 15px 40px rgba(255,255,255,0.12);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255,255,255,0.12);
 
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255,255,255,0.04);
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.09);
+      background: rgba(255,255,255,0.09);
 
       transform: translateY(-3px);
     }
 
-    .hero-stats {
-      margin-top: 70px;
 
+    /* STATYSTYKI */
+
+    .hero-stats {
       display: flex;
       flex-wrap: wrap;
 
       gap: 45px;
+
+      margin-top: 70px;
     }
 
     .stat strong {
@@ -341,20 +393,20 @@
 
 
     /* =========================
-       NAGŁÓWKI SEKCJI
+       NAGŁÓWKI
     ========================= */
 
     .section-label {
+      margin-bottom: 12px;
+
       color: #7c5cff;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
 
       font-size: 13px;
       font-weight: 800;
 
-      margin-bottom: 12px;
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
     }
 
     .section-title {
@@ -366,9 +418,9 @@
     }
 
     .section-description {
-      margin-top: 18px;
-
       max-width: 650px;
+
+      margin-top: 18px;
 
       color: #999ba6;
 
@@ -391,18 +443,19 @@
     }
 
     .card {
+      min-width: 0;
+      min-height: 290px;
+
       padding: 30px;
 
-      min-height: 290px;
+      border: 1px solid rgba(255,255,255,0.08);
 
       border-radius: 24px;
 
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
       background: linear-gradient(
         145deg,
-        rgba(255, 255, 255, 0.055),
-        rgba(255, 255, 255, 0.015)
+        rgba(255,255,255,0.055),
+        rgba(255,255,255,0.015)
       );
 
       transition: 0.3s;
@@ -411,9 +464,7 @@
     .card:hover {
       transform: translateY(-6px);
 
-      border-color: rgba(124, 92, 255, 0.35);
-
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+      border-color: rgba(124,92,255,0.35);
     }
 
     .card-number {
@@ -426,7 +477,7 @@
 
       border-radius: 13px;
 
-      background: rgba(124, 92, 255, 0.15);
+      background: rgba(124,92,255,0.15);
 
       color: #a795ff;
 
@@ -451,70 +502,76 @@
     ========================= */
 
     .price-box {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 45px;
+
       margin-top: 55px;
 
       padding: 45px;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 35px;
+      border: 1px solid rgba(255,255,255,0.09);
 
       border-radius: 28px;
-
-      border: 1px solid rgba(255, 255, 255, 0.09);
 
       background:
         radial-gradient(
           circle at 90% 0%,
-          rgba(124, 92, 255, 0.18),
+          rgba(124,92,255,0.18),
           transparent 35%
         ),
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,0.035);
+    }
+
+    .price-left {
+      min-width: 0;
     }
 
     .price-label {
+      margin-bottom: 20px;
+
       color: #91939f;
 
       font-size: 14px;
-
-      margin-bottom: 20px;
     }
 
     .price-big {
       display: flex;
+
       align-items: center;
 
       gap: 12px;
 
       white-space: nowrap;
 
-      font-size: clamp(45px, 6vw, 72px);
+      font-size: clamp(42px, 5.5vw, 72px);
 
       font-weight: 900;
 
-      letter-spacing: -2px;
-
       line-height: 1;
+
+      letter-spacing: -2px;
     }
 
     .price-dash {
       color: #7c5cff;
 
       letter-spacing: 0;
-
-      font-weight: 800;
     }
 
     .price-info {
       max-width: 500px;
+
+      min-width: 0;
     }
 
     .price-info h3 {
-      font-size: 24px;
-
       margin-bottom: 10px;
+
+      font-size: 24px;
     }
 
     .price-info p {
@@ -545,24 +602,24 @@
     }
 
     .process-item {
+      min-width: 0;
+
       padding: 25px;
 
       border-left: 2px solid #7c5cff;
 
-      background: rgba(255, 255, 255, 0.025);
+      background: rgba(255,255,255,0.025);
     }
 
     .process-item span {
       color: #7c5cff;
 
-      font-weight: 900;
-
       font-size: 13px;
+      font-weight: 900;
     }
 
     .process-item h3 {
       margin-top: 10px;
-
       margin-bottom: 7px;
     }
 
@@ -584,17 +641,17 @@
     .contact-box {
       padding: 80px 30px;
 
+      border: 1px solid rgba(255,255,255,0.08);
+
       border-radius: 30px;
 
       background:
         radial-gradient(
           circle at center,
-          rgba(124, 92, 255, 0.18),
+          rgba(124,92,255,0.18),
           transparent 60%
         ),
-        rgba(255, 255, 255, 0.025);
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
+        rgba(255,255,255,0.025);
     }
 
     .contact-box h2 {
@@ -606,9 +663,9 @@
     }
 
     .contact-box p {
-      margin: 20px auto 35px;
-
       max-width: 600px;
+
+      margin: 20px auto 35px;
 
       color: #999ba6;
     }
@@ -621,6 +678,8 @@
       color: #a795ff;
 
       font-size: 14px;
+
+      word-break: break-word;
     }
 
 
@@ -631,7 +690,7 @@
     footer {
       padding: 30px 0;
 
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-top: 1px solid rgba(255,255,255,0.07);
 
       color: #6e707c;
 
@@ -640,6 +699,7 @@
 
     .footer-flex {
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
@@ -647,30 +707,11 @@
     }
 
 
-    /* =========================
-       MENU TELEFON
-    ========================= */
-
-    .menu-btn {
-      display: none;
-
-      background: none;
-
-      border: none;
-
-      color: #ffffff;
-
-      font-size: 27px;
-
-      cursor: pointer;
-    }
-
-
-    /* =========================
+    /* =================================
        TABLET
-    ========================= */
+    ================================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
 
       .cards {
         grid-template-columns: 1fr;
@@ -686,31 +727,46 @@
         align-items: flex-start;
       }
 
+      .price-info {
+        max-width: 100%;
+      }
+
     }
 
 
-    /* =========================
+    /* =================================
        TELEFON
-    ========================= */
+    ================================= */
 
     @media (max-width: 700px) {
+
+      html {
+        scroll-padding-top: 75px;
+      }
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+
+      /* MENU */
 
       .nav-container {
         height: 70px;
       }
 
       .logo {
-        width: 180px;
-        height: 48px;
+        width: 170px;
+        height: 52px;
       }
 
       .logo img {
-        width: 180px;
-        height: 48px;
+        width: 170px;
+        height: 52px;
       }
 
       .menu-btn {
-        display: block;
+        display: flex;
       }
 
       .nav-links {
@@ -723,15 +779,15 @@
 
         width: 100%;
 
+        padding: 15px 14px 20px;
+
         flex-direction: column;
 
-        align-items: stretch;
+        gap: 5px;
 
-        padding: 20px 5% 25px;
+        background: rgba(8,9,12,0.98);
 
-        background: #0b0c10;
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
       }
 
       .nav-links.active {
@@ -739,56 +795,190 @@
       }
 
       .nav-links a {
-        padding: 10px 0;
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 10px;
+
+        font-size: 16px;
+      }
+
+      .nav-links a:not(.nav-btn):hover {
+        background: rgba(255,255,255,0.04);
       }
 
       .nav-btn {
-        text-align: center;
+        margin-top: 8px;
 
-        margin-top: 5px;
+        text-align: center;
+      }
+
+
+      /* HERO */
+
+      .hero {
+        min-height: auto;
+
+        padding-top: 125px;
+        padding-bottom: 75px;
+      }
+
+      .hero::before {
+        width: 350px;
+        height: 350px;
+
+        right: -180px;
+      }
+
+      .hero::after {
+        width: 300px;
+        height: 300px;
+      }
+
+      .badge {
+        font-size: 12px;
       }
 
       h1 {
-        letter-spacing: -3px;
-      }
+        font-size: clamp(44px, 14vw, 64px);
 
-      .hero {
-        padding-top: 125px;
+        line-height: 1;
+
+        letter-spacing: -3px;
+
+        overflow-wrap: anywhere;
       }
 
       .hero-description {
-        font-size: 17px;
+        margin-top: 24px;
+
+        font-size: 16px;
       }
 
       .hero-buttons {
+        width: 100%;
+
         flex-direction: column;
+
+        margin-top: 30px;
       }
 
-      .btn {
-        text-align: center;
+      .hero-buttons .btn {
+        width: 100%;
       }
 
       .hero-stats {
-        gap: 25px;
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+
+        gap: 25px 15px;
+
+        margin-top: 50px;
       }
+
+      .stat:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .stat strong {
+        font-size: 20px;
+      }
+
+
+      /* SEKCJE */
 
       section {
-        padding: 80px 0;
+        padding: 75px 0;
       }
 
-      .process {
-        grid-template-columns: 1fr;
+      .section-title {
+        font-size: 38px;
+
+        letter-spacing: -2px;
       }
+
+      .section-description {
+        font-size: 16px;
+      }
+
+
+      /* OFERTA */
+
+      .cards {
+        margin-top: 40px;
+      }
+
+      .card {
+        min-height: auto;
+
+        padding: 25px;
+      }
+
+      .card h3 {
+        margin-top: 30px;
+      }
+
+
+      /* CENNIK */
 
       .price-box {
-        padding: 30px 23px;
+        gap: 32px;
+
+        margin-top: 40px;
+
+        padding: 28px 22px;
       }
 
       .price-big {
-        font-size: clamp(34px, 9vw, 50px);
+        width: 100%;
 
-        gap: 7px;
+        gap: 8px;
+
+        white-space: normal;
+
+        flex-wrap: wrap;
+
+        font-size: clamp(38px, 11vw, 52px);
+
+        letter-spacing: -1.5px;
       }
+
+      .price-info h3 {
+        font-size: 21px;
+      }
+
+
+      /* JAK TO DZIAŁA */
+
+      .process {
+        grid-template-columns: 1fr;
+
+        margin-top: 40px;
+      }
+
+
+      /* KONTAKT */
+
+      .contact-box {
+        padding: 55px 20px;
+      }
+
+      .contact-box h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+      }
+
+      .contact-box .btn {
+        width: 100%;
+      }
+
+
+      /* STOPKA */
 
       .footer-flex {
         flex-direction: column;
@@ -798,17 +988,59 @@
 
     }
 
-  </style>
 
+    /* =================================
+       BARDZO MAŁE TELEFONY
+    ================================= */
+
+    @media (max-width: 400px) {
+
+      .container {
+        width: calc(100% - 22px);
+      }
+
+      .logo {
+        width: 145px;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat:last-child {
+        grid-column: auto;
+      }
+
+      .price-big {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .contact-box h2 {
+        font-size: 36px;
+      }
+
+    }
+
+  </style>
 </head>
 
 
 <body>
 
 
-  <!-- =========================
-       MENU
-  ========================== -->
+  <!-- MENU -->
 
   <nav>
 
@@ -826,6 +1058,7 @@
 
       <button
         class="menu-btn"
+        id="menuBtn"
         onclick="toggleMenu()"
         aria-label="Otwórz menu"
       >
@@ -864,13 +1097,10 @@
   </nav>
 
 
-
   <main>
 
 
-    <!-- =========================
-         STRONA GŁÓWNA
-    ========================== -->
+    <!-- STRONA GŁÓWNA -->
 
     <section
       class="hero"
@@ -931,7 +1161,6 @@
 
           <div class="hero-stats">
 
-
             <div class="stat">
 
               <strong>
@@ -970,7 +1199,6 @@
 
             </div>
 
-
           </div>
 
         </div>
@@ -980,15 +1208,11 @@
     </section>
 
 
-
-    <!-- =========================
-         OFERTA
-    ========================== -->
+    <!-- OFERTA -->
 
     <section id="oferta">
 
       <div class="container">
-
 
         <p class="section-label">
           Oferta
@@ -1026,14 +1250,11 @@
             </h3>
 
             <p>
-
               Prosta i efektowna strona z wszystkimi najważniejszymi
               informacjami w jednym miejscu.
-
             </p>
 
           </div>
-
 
 
           <div class="card">
@@ -1047,14 +1268,11 @@
             </h3>
 
             <p>
-
               Kilka podstron, oferta, galeria, kontakt i wszystko,
               czego potrzebujesz do pokazania swojej działalności.
-
             </p>
 
           </div>
-
 
 
           <div class="card">
@@ -1068,10 +1286,8 @@
             </h3>
 
             <p>
-
               Bardziej rozbudowana strona, dodatkowe funkcje,
               formularze, logowanie lub połączenie z bazą danych.
-
             </p>
 
           </div>
@@ -1084,15 +1300,11 @@
     </section>
 
 
-
-    <!-- =========================
-         CENNIK
-    ========================== -->
+    <!-- CENNIK -->
 
     <section id="cennik">
 
       <div class="container">
-
 
         <p class="section-label">
           Cennik
@@ -1111,7 +1323,7 @@
         <div class="price-box">
 
 
-          <div>
+          <div class="price-left">
 
             <p class="price-label">
               Projekty od
@@ -1137,21 +1349,16 @@
           </div>
 
 
-
           <div class="price-info">
 
             <h3>
               Każdy projekt wyceniam indywidualnie.
             </h3>
 
-
             <p>
-
               Cena zależy od liczby podstron, wyglądu oraz funkcji,
               które mają znaleźć się na stronie.
-
             </p>
-
 
             <p class="database">
 
@@ -1173,15 +1380,11 @@
     </section>
 
 
-
-    <!-- =========================
-         JAK TO DZIAŁA
-    ========================== -->
+    <!-- JAK TO DZIAŁA -->
 
     <section id="jak-to-dziala">
 
       <div class="container">
-
 
         <p class="section-label">
           Jak to działa
@@ -1202,79 +1405,59 @@
 
           <div class="process-item">
 
-            <span>
-              01
-            </span>
+            <span>01</span>
 
             <h3>
               Kontakt
             </h3>
 
             <p>
-
-              Opisujesz czego potrzebujesz i jaki masz pomysł.
-
+              Opisujesz mi czego potrzebujesz i jaki masz pomysł.
             </p>
 
           </div>
 
 
-
           <div class="process-item">
 
-            <span>
-              02
-            </span>
+            <span>02</span>
 
             <h3>
               Wycena
             </h3>
 
             <p>
-
               Ustalamy zakres projektu, funkcje oraz cenę.
-
             </p>
 
           </div>
 
 
-
           <div class="process-item">
 
-            <span>
-              03
-            </span>
+            <span>03</span>
 
             <h3>
               Realizacja
             </h3>
 
             <p>
-
               Tworzę stronę i pokazuję Ci kolejne etapy.
-
             </p>
 
           </div>
 
 
-
           <div class="process-item">
 
-            <span>
-              04
-            </span>
+            <span>04</span>
 
             <h3>
               Gotowe
             </h3>
 
             <p>
-
-              Po zaakceptowaniu projektu strona jest gotowa
-              do publikacji.
-
+              Po zaakceptowaniu projektu strona jest gotowa do publikacji.
             </p>
 
           </div>
@@ -1287,10 +1470,7 @@
     </section>
 
 
-
-    <!-- =========================
-         KONTAKT
-    ========================== -->
+    <!-- KONTAKT -->
 
     <section
       id="kontakt"
@@ -1300,7 +1480,6 @@
       <div class="container">
 
         <div class="contact-box">
-
 
           <p class="section-label">
             Masz pomysł?
@@ -1341,7 +1520,6 @@
             kontakt.webnexo@gmail.com
           </a>
 
-
         </div>
 
       </div>
@@ -1352,49 +1530,39 @@
   </main>
 
 
-
-  <!-- =========================
-       STOPKA
-  ========================== -->
+  <!-- STOPKA -->
 
   <footer>
 
     <div class="container footer-flex">
 
-
       <div>
-
-        © 2026 WebNexo.pl.
-        Wszystkie prawa zastrzeżone.
-
+        © 2026 WebNexo.pl. Wszystkie prawa zastrzeżone.
       </div>
 
-
       <div>
-
         Strony internetowe na zamówienie.
-
       </div>
-
 
     </div>
 
   </footer>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
 
     function toggleMenu() {
 
-      document
-        .getElementById("navLinks")
-        .classList
-        .toggle("active");
+      const menu = document.getElementById("navLinks");
+      const button = document.getElementById("menuBtn");
+
+      menu.classList.toggle("active");
+
+      if (menu.classList.contains("active")) {
+        button.innerHTML = "✕";
+      } else {
+        button.innerHTML = "☰";
+      }
 
     }
 
@@ -1410,12 +1578,35 @@
             .classList
             .remove("active");
 
+          document
+            .getElementById("menuBtn")
+            .innerHTML = "☰";
+
         });
 
       });
+
+
+    window.addEventListener("resize", () => {
+
+      if (window.innerWidth > 700) {
+
+        document
+          .getElementById("navLinks")
+          .classList
+          .remove("active");
+
+        document
+          .getElementById("menuBtn")
+          .innerHTML = "☰";
+
+      }
+
+    });
 
   </script>
 
 
 </body>
+
 </html>
