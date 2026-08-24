@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MWeb — Strony internetowe</title>
+  <meta
+    name="description"
+    content="Nowoczesne strony internetowe tworzone na zamówienie. Proste strony, strony firmowe i bardziej rozbudowane projekty."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08090c;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(8, 9, 12, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-container {
+      min-height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #7c5cff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #b9bbc5;
+      font-size: 15px;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border-radius: 12px;
+      background: #fff;
+      color: #08090c !important;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 0 100px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+
+      width: 550px;
+      height: 550px;
+
+      top: 50px;
+      right: -150px;
+
+      border-radius: 50%;
+
+      background: rgba(124, 92, 255, .20);
+      filter: blur(130px);
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+
+      width: 400px;
+      height: 400px;
+
+      bottom: 0;
+      left: -200px;
+
+      border-radius: 50%;
+
+      background: rgba(47, 175, 255, .12);
+      filter: blur(120px);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 8px 13px;
+
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,.1);
+
+      background: rgba(255,255,255,.04);
+
+      color: #c7c8d0;
+      font-size: 14px;
+
+      margin-bottom: 25px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #62e6a6;
+      border-radius: 50%;
+
+      box-shadow: 0 0 15px #62e6a6;
+    }
+
+    h1 {
+      font-size: clamp(50px, 7vw, 92px);
+      line-height: .98;
+      letter-spacing: -5px;
+
+      max-width: 1000px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        #fff,
+        #9d8aff,
+        #61b9ff
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      margin-top: 30px;
+
+      max-width: 650px;
+
+      font-size: 19px;
+      color: #a8aab5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+
+      margin-top: 38px;
+    }
+
+    .btn {
+      padding: 15px 24px;
+      border-radius: 14px;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      transition: .25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #08090c;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255,255,255,.12);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.09);
+    }
+
+    .hero-stats {
+      margin-top: 70px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 45px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 23px;
+    }
+
+    .stat span {
+      color: #858794;
+      font-size: 13px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      color: #7c5cff;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+    }
+
+    .section-description {
+      margin-top: 18px;
+
+      max-width: 650px;
+
+      color: #999ba6;
+      font-size: 17px;
+    }
+
+    /* OFFER */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .card {
+      padding: 30px;
+
+      min-height: 290px;
+
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.015)
+        );
+
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124,92,255,.35);
+    }
+
+    .card-number {
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 13px;
+
+      background: rgba(124,92,255,.15);
+      color: #a795ff;
+
+      font-weight: 900;
+    }
+
+    .card h3 {
+      margin-top: 45px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin-top: 10px;
+      color: #8d8f9a;
+    }
+
+    /* PRICE */
+
+    .price-box {
+      margin-top: 55px;
+
+      padding: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.09);
+
+      background:
+        radial-gradient(
+          circle at 90% 0%,
+          rgba(124,92,255,.18),
+          transparent 35%
+        ),
+        rgba(255,255,255,.035);
+    }
+
+    .price-big {
+      font-size: clamp(45px, 6vw, 72px);
+      font-weight: 900;
+      letter-spacing: -4px;
+    }
+
+    .price-big span {
+      color: #7c5cff;
+    }
+
+    .price-info {
+      max-width: 500px;
+    }
+
+    .price-info h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .price-info p {
+      color: #999ba6;
+    }
+
+    .database {
+      margin-top: 15px;
+      color: #c7c8d0 !important;
+      font-size: 14px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 15px;
+      margin-top: 55px;
+    }
+
+    .process-item {
+      padding: 25px;
+
+      border-left: 2px solid #7c5cff;
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .process-item span {
+      color: #7c5cff;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .process-item h3 {
+      margin-top: 10px;
+      margin-bottom: 7px;
+    }
+
+    .process-item p {
+      color: #8f919c;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 80px 30px;
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(124,92,255,.18),
+          transparent 60%
+        ),
+        rgba(255,255,255,.025);
+
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .contact-box p {
+      margin: 20px auto 35px;
+      max-width: 600px;
+
+      color: #999ba6;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid rgba(255,255,255,.07);
+
+      color: #6e707c;
+      font-size: 13px;
+    }
+
+    .footer-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    .menu-btn {
+      display: none;
+
+      background: none;
+      border: none;
+
+      color: white;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .price-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 74px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 20px 5% 25px;
+
+        background: #0b0c10;
+
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+      }
+
+      .nav-btn {
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .hero-stats {
+        gap: 25px;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .price-box {
+        padding: 30px 23px;
+      }
+
+      .footer-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-container">
+
+      <a href="#" class="logo">
+        M<span>Web</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#oferta">Oferta</a>
+        <a href="#cennik">Cennik</a>
+        <a href="#jak-to-dziala">Jak to działa</a>
+        <a href="#kontakt" class="nav-btn">Napisz do mnie</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Przyjmuję nowe projekty
+          </div>
+
+          <h1>
+            Strony, które
+            <span class="gradient-text">robią wrażenie.</span>
+          </h1>
+
+          <p class="hero-description">
+            Tworzę nowoczesne, szybkie i responsywne strony internetowe
+            dopasowane do Twojego pomysłu, biznesu lub projektu.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#kontakt" class="btn btn-primary">
+              Wyceń swoją stronę →
+            </a>
+
+            <a href="#oferta" class="btn btn-secondary">
+              Zobacz ofertę
+            </a>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div class="stat">
+              <strong>300 zł</strong>
+              <span>ceny już od</span>
+            </div>
+
+            <div class="stat">
+              <strong>100%</strong>
+              <span>responsywności</span>
+            </div>
+
+            <div class="stat">
+              <strong>Indywidualnie</strong>
+              <span>każdy projekt</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OFERTA -->
+
+    <section id="oferta">
+
+      <div class="container">
+
+        <p class="section-label">Oferta</p>
+
+        <h2 class="section-title">
+          Strona dopasowana<br>
+          do Twoich potrzeb.
+        </h2>
+
+        <p class="section-description">
+          Od prostej strony wizytówki po bardziej rozbudowany projekt
+          z dodatkowymi funkcjami.
+        </p>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-number">01</div>
+
+            <h3>One Page</h3>
+
+            <p>
+              Prosta i efektowna strona z wszystkimi najważniejszymi
+              informacjami w jednym miejscu.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="card-number">02</div>
+
+            <h3>Strona firmowa</h3>
+
+            <p>
+              Kilka podstron, oferta, galeria, kontakt i wszystko,
+              czego potrzebujesz do pokazania swojej działalności.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="card-number">03</div>
+
+            <h3>Projekt indywidualny</h3>
+
+            <p>
+              Bardziej rozbudowana strona, dodatkowe funkcje,
+              formularze, logowanie lub połączenie z bazą danych.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CENNIK -->
+
+    <section id="cennik">
+
+      <div class="container">
+
+        <p class="section-label">Cennik</p>
+
+        <h2 class="section-title">
+          Prosto i bez<br>
+          ukrytych kosztów.
+        </h2>
+
+        <div class="price-box">
+
+          <div>
+
+            <p style="color:#91939f; font-size:14px;">
+              Projekty od
+            </p>
+
+            <div class="price-big">
+              300<span>–</span>3000 zł
+            </div>
+
+          </div>
+
+          <div class="price-info">
+
+            <h3>Każdy projekt wyceniam indywidualnie.</h3>
+
+            <p>
+              Cena zależy od liczby podstron, wyglądu oraz funkcji,
+              które mają znaleźć się na stronie.
+            </p>
+
+            <p class="database">
+              Baza danych / system logowania / panel użytkownika:
+              <strong>od +1000 zł</strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- JAK TO DZIALA -->
+
+    <section id="jak-to-dziala">
+
+      <div class="container">
+
+        <p class="section-label">Jak to działa</p>
+
+        <h2 class="section-title">
+          Od pomysłu<br>
+          do gotowej strony.
+        </h2>
+
+        <div class="process">
+
+          <div class="process-item">
+            <span>01</span>
+
+            <h3>Kontakt</h3>
+
+            <p>
+              Opisujesz mi czego potrzebujesz i jaki masz pomysł.
+            </p>
+          </div>
+
+
+          <div class="process-item">
+            <span>02</span>
+
+            <h3>Wycena</h3>
+
+            <p>
+              Ustalamy zakres projektu, funkcje oraz cenę.
+            </p>
+          </div>
+
+
+          <div class="process-item">
+            <span>03</span>
+
+            <h3>Realizacja</h3>
+
+            <p>
+              Tworzę stronę i pokazuję Ci kolejne etapy.
+            </p>
+          </div>
+
+
+          <div class="process-item">
+            <span>04</span>
+
+            <h3>Gotowe</h3>
+
+            <p>
+              Po zaakceptowaniu projektu strona jest gotowa do publikacji.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="kontakt" class="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <p class="section-label">
+            Masz pomysł?
+          </p>
+
+          <h2>
+            Zróbmy z niego<br>
+            <span class="gradient-text">dobrą stronę.</span>
+          </h2>
+
+          <p>
+            Napisz czego potrzebujesz. Wstępna rozmowa
+            i wycena projektu są bezpłatne.
+          </p>
+
+          <a
+            href="mailto:kontakt@mweb.pl"
+            class="btn btn-primary"
+          >
+            Napisz do mnie →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-flex">
+
+      <div>
+        © 2026 MWeb. Wszystkie prawa zastrzeżone.
+      </div>
+
+      <div>
+        Strony internetowe na zamówienie.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function toggleMenu() {
+      document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document
+          .getElementById("navLinks")
+          .classList.remove("active");
+      });
+    });
+
+  </script>
+
+</body>
+</html>
