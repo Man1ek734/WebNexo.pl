@@ -1,1 +1,1559 @@
+<!DOCTYPE html>
+<html lang="pl">
 
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Polityka prywatności — WebNexo.pl</title>
+
+  <meta
+    name="description"
+    content="Polityka prywatności WebNexo.pl."
+  >
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08090c;
+      color: #ffffff;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      background: rgba(8, 9, 12, 0.88);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-container {
+      height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      width: 220px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 220px;
+      height: 58px;
+
+      object-fit: cover;
+      object-position: center;
+
+      display: block;
+    }
+
+
+    /* MENU PC */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 27px;
+    }
+
+    .nav-links a {
+      color: #b9bbc5;
+
+      font-size: 15px;
+
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .active-link {
+      color: #a795ff !important;
+      font-weight: 700;
+    }
+
+    .contact-btn {
+      padding: 11px 18px;
+
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      color: #08090c !important;
+
+      font-weight: 700;
+    }
+
+
+    /* MENU TELEFON */
+
+    .menu-btn {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      background: rgba(255,255,255,0.05);
+
+      color: white;
+
+      font-size: 24px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       NAGŁÓWEK
+    ========================= */
+
+    .hero {
+      padding: 165px 0 70px;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -170px;
+      top: 40px;
+
+      border-radius: 50%;
+
+      background: rgba(124, 92, 255, 0.18);
+
+      filter: blur(130px);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .label {
+      margin-bottom: 12px;
+
+      color: #7c5cff;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      max-width: 900px;
+
+      font-size: clamp(48px, 7vw, 76px);
+
+      line-height: 1;
+
+      letter-spacing: -4px;
+    }
+
+    .gradient {
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #9d8aff,
+        #61b9ff
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 720px;
+
+      margin-top: 24px;
+
+      color: #999ba6;
+
+      font-size: 17px;
+    }
+
+    .update {
+      display: inline-block;
+
+      margin-top: 25px;
+
+      padding: 8px 13px;
+
+      border-radius: 50px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(255,255,255,0.035);
+
+      color: #858794;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       POLITYKA
+    ========================= */
+
+    .rules {
+      padding-bottom: 100px;
+    }
+
+    .rules-layout {
+      display: grid;
+
+      grid-template-columns: 250px 1fr;
+
+      gap: 40px;
+
+      align-items: start;
+    }
+
+
+    /* SPIS TREŚCI */
+
+    .toc {
+      position: sticky;
+
+      top: 110px;
+
+      padding: 22px;
+
+      border-radius: 20px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(255,255,255,0.025);
+    }
+
+    .toc-title {
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .toc a {
+      display: block;
+
+      padding: 8px 0;
+
+      color: #858794;
+
+      font-size: 13px;
+
+      transition: 0.2s;
+    }
+
+    .toc a:hover {
+      color: #a795ff;
+    }
+
+
+    /* TREŚĆ */
+
+    .rules-content {
+      min-width: 0;
+    }
+
+    .rule-section {
+      margin-bottom: 22px;
+
+      padding: 32px;
+
+      border-radius: 22px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.045),
+        rgba(255,255,255,0.015)
+      );
+    }
+
+    .rule-number {
+      color: #7c5cff;
+
+      font-size: 12px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .rule-section h2 {
+      margin-top: 5px;
+      margin-bottom: 20px;
+
+      font-size: 27px;
+
+      letter-spacing: -1px;
+    }
+
+    .rule-section p {
+      margin-top: 12px;
+
+      color: #a1a3ad;
+
+      font-size: 15px;
+    }
+
+    .rule-section ul {
+      margin-top: 15px;
+      padding-left: 21px;
+
+      color: #a1a3ad;
+
+      font-size: 15px;
+    }
+
+    .rule-section li {
+      margin: 9px 0;
+    }
+
+    .highlight {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+
+    /* WAŻNA INFORMACJA */
+
+    .important {
+      margin-top: 30px;
+
+      padding: 22px;
+
+      border-radius: 16px;
+
+      border: 1px solid rgba(124,92,255,0.20);
+
+      background: rgba(124,92,255,0.07);
+
+      color: #b9bbc5;
+
+      font-size: 14px;
+    }
+
+
+    /* KONTAKT */
+
+    .contact {
+      margin-top: 40px;
+
+      padding: 55px 25px;
+
+      text-align: center;
+
+      border-radius: 26px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(124,92,255,0.15),
+          transparent 60%
+        ),
+        rgba(255,255,255,0.02);
+    }
+
+    .contact h2 {
+      font-size: 34px;
+    }
+
+    .contact p {
+      margin: 12px 0 25px;
+
+      color: #999ba6;
+    }
+
+    .contact-button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding: 14px 24px;
+
+      border-radius: 14px;
+
+      background: #ffffff;
+
+      color: #08090c;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       STOPKA
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid rgba(255,255,255,0.07);
+
+      color: #6e707c;
+
+      font-size: 13px;
+    }
+
+    .footer {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: #a795ff;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .rules-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+    }
+
+
+    /* =========================
+       MENU TELEFON
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 20px 22px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        background: rgba(8,9,12,0.98);
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 10px;
+
+        font-size: 16px;
+      }
+
+      .contact-btn {
+        margin-top: 7px;
+
+        text-align: center;
+      }
+
+    }
+
+
+    /* =========================
+       TELEFON
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .nav-container {
+        height: 70px;
+      }
+
+      .logo {
+        width: 165px;
+        height: 50px;
+      }
+
+      .logo img {
+        width: 165px;
+        height: 50px;
+      }
+
+      .nav-links {
+        top: 70px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .hero {
+        padding-top: 125px;
+        padding-bottom: 55px;
+      }
+
+      h1 {
+        font-size: 44px;
+
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .rules {
+        padding-bottom: 70px;
+      }
+
+      .rule-section {
+        padding: 24px 20px;
+      }
+
+      .rule-section h2 {
+        font-size: 23px;
+      }
+
+      .toc {
+        padding: 20px;
+      }
+
+      .contact {
+        padding: 40px 20px;
+      }
+
+      .contact-button {
+        width: 100%;
+      }
+
+      .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav-container">
+
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+
+        <img
+          src="logo24.png"
+          alt="WebNexo.pl"
+        >
+
+      </a>
+
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="index.html#oferta">
+          Oferta
+        </a>
+
+        <a href="index.html#cennik">
+          Cennik
+        </a>
+
+        <a href="index.html#jak-to-dziala">
+          Jak to działa
+        </a>
+
+        <a href="platnosci.html">
+          Płatności
+        </a>
+
+        <a href="regulamin.html">
+          Regulamin
+        </a>
+
+        <a
+          href="polityka-prywatnosci.html"
+          class="active-link"
+        >
+          Prywatność
+        </a>
+
+        <a
+          href="index.html#kontakt"
+          class="contact-btn"
+        >
+          Kontakt
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================
+       NAGŁÓWEK
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="container hero-content">
+
+      <p class="label">
+        WebNexo.pl
+      </p>
+
+      <h1>
+        Polityka
+        <span class="gradient">
+          prywatności.
+        </span>
+      </h1>
+
+      <p class="hero-description">
+
+        Dowiedz się, jakie informacje mogą być przetwarzane
+        podczas kontaktu z WebNexo.pl, realizacji projektu
+        oraz dokonywania płatności.
+
+      </p>
+
+      <div class="update">
+        Ostatnia aktualizacja: 24 sierpnia 2026
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       POLITYKA
+  ========================= -->
+
+  <main class="rules">
+
+    <div class="container rules-layout">
+
+
+      <!-- SPIS TREŚCI -->
+
+      <aside class="toc">
+
+        <div class="toc-title">
+          Spis treści
+        </div>
+
+        <a href="#ogolne">
+          1. Informacje ogólne
+        </a>
+
+        <a href="#administrator">
+          2. Administrator danych
+        </a>
+
+        <a href="#dane">
+          3. Jakie dane zbieramy
+        </a>
+
+        <a href="#cele">
+          4. Cele przetwarzania
+        </a>
+
+        <a href="#email">
+          5. Kontakt e-mail
+        </a>
+
+        <a href="#platnosci">
+          6. Dane związane z płatnością
+        </a>
+
+        <a href="#odbiorcy">
+          7. Odbiorcy danych
+        </a>
+
+        <a href="#czas">
+          8. Czas przechowywania
+        </a>
+
+        <a href="#prawa">
+          9. Twoje prawa
+        </a>
+
+        <a href="#cookies">
+          10. Pliki cookies
+        </a>
+
+        <a href="#bezpieczenstwo">
+          11. Bezpieczeństwo
+        </a>
+
+        <a href="#zmiany">
+          12. Zmiany polityki
+        </a>
+
+        <a href="#kontakt">
+          13. Kontakt
+        </a>
+
+      </aside>
+
+
+
+      <div class="rules-content">
+
+
+        <!-- 1 -->
+
+        <section
+          class="rule-section"
+          id="ogolne"
+        >
+
+          <span class="rule-number">
+            Punkt 01
+          </span>
+
+          <h2>
+            Informacje ogólne
+          </h2>
+
+          <p>
+            Polityka prywatności opisuje zasady dotyczące
+            danych przekazywanych podczas korzystania
+            z WebNexo.pl oraz podczas kontaktu w sprawie
+            wykonania strony internetowej.
+          </p>
+
+          <p>
+            WebNexo.pl stara się ograniczać zbieranie danych
+            do informacji potrzebnych do kontaktu,
+            przygotowania wyceny, realizacji projektu,
+            płatności oraz przekazania gotowej strony.
+          </p>
+
+          <p>
+            Korzystanie z samej strony internetowej
+            nie wymaga zakładania konta użytkownika.
+          </p>
+
+        </section>
+
+
+
+        <!-- 2 -->
+
+        <section
+          class="rule-section"
+          id="administrator"
+        >
+
+          <span class="rule-number">
+            Punkt 02
+          </span>
+
+          <h2>
+            Administrator danych
+          </h2>
+
+          <p>
+            Administratorem danych przekazywanych
+            w związku z kontaktem oraz realizacją usług
+            WebNexo.pl jest osoba prowadząca WebNexo.pl.
+          </p>
+
+          <p>
+            W sprawach dotyczących danych osobowych
+            można skontaktować się poprzez:
+          </p>
+
+          <p>
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>
+          </p>
+
+          <p>
+            W przypadku rozpoczęcia regularnej działalności
+            dane identyfikujące administratora mogą zostać
+            odpowiednio uzupełnione.
+          </p>
+
+        </section>
+
+
+
+        <!-- 3 -->
+
+        <section
+          class="rule-section"
+          id="dane"
+        >
+
+          <span class="rule-number">
+            Punkt 03
+          </span>
+
+          <h2>
+            Jakie dane mogą być przetwarzane
+          </h2>
+
+          <p>
+            W zależności od sposobu kontaktu oraz rodzaju
+            realizowanego projektu mogą być przetwarzane
+            między innymi:
+          </p>
+
+          <ul>
+            <li>imię lub nazwa podana przez klienta,</li>
+            <li>adres e-mail,</li>
+            <li>numer telefonu, jeżeli zostanie podany,</li>
+            <li>treść wiadomości przesłanych przez klienta,</li>
+            <li>wytyczne dotyczące wykonywanej strony,</li>
+            <li>zdjęcia, teksty, logotypy oraz inne materiały przekazane do projektu,</li>
+            <li>informacje dotyczące płatności,</li>
+            <li>dane potrzebne do wysłania gotowych plików strony.</li>
+          </ul>
+
+          <p>
+            Klient powinien przekazywać wyłącznie dane,
+            które są potrzebne do realizacji zlecenia.
+          </p>
+
+        </section>
+
+
+
+        <!-- 4 -->
+
+        <section
+          class="rule-section"
+          id="cele"
+        >
+
+          <span class="rule-number">
+            Punkt 04
+          </span>
+
+          <h2>
+            W jakim celu wykorzystywane są dane
+          </h2>
+
+          <p>
+            Przekazane dane mogą być wykorzystywane
+            przede wszystkim w celu:
+          </p>
+
+          <ul>
+            <li>odpowiedzi na wiadomość klienta,</li>
+            <li>przygotowania wyceny projektu,</li>
+            <li>ustalenia szczegółów zamówienia,</li>
+            <li>wykonania zamówionej strony internetowej,</li>
+            <li>przesyłania klientowi linku do wersji podglądowej,</li>
+            <li>ustalania i wykonywania poprawek,</li>
+            <li>obsługi płatności,</li>
+            <li>przekazania klientowi gotowych plików ZIP,</li>
+            <li>obsługi reklamacji lub innych zgłoszeń dotyczących projektu,</li>
+            <li>ochrony przed ewentualnymi roszczeniami.</li>
+          </ul>
+
+          <p>
+            Dane nie są wykorzystywane do wysyłania
+            niezamówionych wiadomości reklamowych.
+          </p>
+
+        </section>
+
+
+
+        <!-- 5 -->
+
+        <section
+          class="rule-section"
+          id="email"
+        >
+
+          <span class="rule-number">
+            Punkt 05
+          </span>
+
+          <h2>
+            Kontakt przez e-mail
+          </h2>
+
+          <p>
+            Podstawowym sposobem kontaktu z WebNexo.pl
+            jest adres:
+          </p>
+
+          <p>
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>
+          </p>
+
+          <p>
+            Wysyłając wiadomość e-mail, klient przekazuje
+            co najmniej swój adres e-mail oraz treść wiadomości.
+          </p>
+
+          <p>
+            Informacje zawarte w wiadomości są wykorzystywane
+            do odpowiedzi, przygotowania wyceny oraz
+            ewentualnej realizacji zamówienia.
+          </p>
+
+          <p>
+            Obsługa poczty elektronicznej odbywa się
+            przy wykorzystaniu usług Gmail / Google.
+          </p>
+
+        </section>
+
+
+
+        <!-- 6 -->
+
+        <section
+          class="rule-section"
+          id="platnosci"
+        >
+
+          <span class="rule-number">
+            Punkt 06
+          </span>
+
+          <h2>
+            Dane związane z płatnością
+          </h2>
+
+          <p>
+            W przypadku dokonania płatności mogą być
+            przetwarzane informacje związane z daną transakcją.
+          </p>
+
+          <p>
+            W zależności od wybranej metody płatności
+            informacje mogą obejmować między innymi dane
+            widoczne przy przelewie bankowym lub płatności BLIK.
+          </p>
+
+          <p>
+            WebNexo.pl nie prosi klienta o podawanie
+            danych logowania do bankowości internetowej,
+            haseł, kodów PIN ani innych danych umożliwiających
+            dostęp do rachunku bankowego.
+          </p>
+
+          <p>
+            Dane do dokonania płatności są przekazywane
+            klientowi indywidualnie po ustaleniu szczegółów
+            realizacji.
+          </p>
+
+        </section>
+
+
+
+        <!-- 7 -->
+
+        <section
+          class="rule-section"
+          id="odbiorcy"
+        >
+
+          <span class="rule-number">
+            Punkt 07
+          </span>
+
+          <h2>
+            Odbiorcy danych
+          </h2>
+
+          <p>
+            Dane klienta nie są sprzedawane innym podmiotom.
+          </p>
+
+          <p>
+            W zakresie potrzebnym do świadczenia usług
+            dane mogą być przetwarzane przez dostawców
+            wykorzystywanych narzędzi i usług, na przykład:
+          </p>
+
+          <ul>
+            <li>Google / Gmail — obsługa poczty elektronicznej,</li>
+            <li>GitHub — przechowywanie kodu lub udostępnianie strony podglądowej,</li>
+            <li>bank lub operator płatności — obsługa płatności,</li>
+            <li>dostawców usług wykorzystywanych w konkretnym projekcie.</li>
+          </ul>
+
+          <p>
+            Zakres danych przekazywanych takim podmiotom
+            jest ograniczany do informacji potrzebnych
+            do wykonania danej czynności.
+          </p>
+
+        </section>
+
+
+
+        <!-- 8 -->
+
+        <section
+          class="rule-section"
+          id="czas"
+        >
+
+          <span class="rule-number">
+            Punkt 08
+          </span>
+
+          <h2>
+            Jak długo przechowywane są dane
+          </h2>
+
+          <p>
+            Dane są przechowywane przez okres potrzebny
+            do prowadzenia kontaktu oraz realizacji projektu.
+          </p>
+
+          <p>
+            Po zakończeniu współpracy część wiadomości
+            i informacji dotyczących zlecenia może być
+            przechowywana przez czas potrzebny do obsługi
+            reklamacji, rozliczeń lub ewentualnych roszczeń.
+          </p>
+
+          <p>
+            Materiały projektowe, które nie są już potrzebne,
+            mogą zostać usunięte po zakończeniu realizacji.
+          </p>
+
+          <p>
+            Klient powinien zachować własną kopię otrzymanego
+            archiwum ZIP z gotową stroną.
+          </p>
+
+        </section>
+
+
+
+        <!-- 9 -->
+
+        <section
+          class="rule-section"
+          id="prawa"
+        >
+
+          <span class="rule-number">
+            Punkt 09
+          </span>
+
+          <h2>
+            Prawa dotyczące danych
+          </h2>
+
+          <p>
+            Osobie, której dane są przetwarzane,
+            mogą przysługiwać prawa wynikające
+            z obowiązujących przepisów o ochronie danych.
+          </p>
+
+          <p>
+            W zależności od sytuacji może to obejmować
+            między innymi prawo do:
+          </p>
+
+          <ul>
+            <li>dostępu do swoich danych,</li>
+            <li>poprawienia nieprawidłowych danych,</li>
+            <li>żądania usunięcia danych,</li>
+            <li>ograniczenia przetwarzania,</li>
+            <li>wniesienia sprzeciwu wobec przetwarzania,</li>
+            <li>otrzymania informacji dotyczących przetwarzanych danych.</li>
+          </ul>
+
+          <p>
+            W sprawach dotyczących realizacji tych praw
+            można napisać na:
+          </p>
+
+          <p>
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>
+          </p>
+
+        </section>
+
+
+
+        <!-- 10 -->
+
+        <section
+          class="rule-section"
+          id="cookies"
+        >
+
+          <span class="rule-number">
+            Punkt 10
+          </span>
+
+          <h2>
+            Pliki cookies i dane techniczne
+          </h2>
+
+          <p>
+            WebNexo.pl obecnie nie korzysta z własnego
+            systemu kont użytkowników ani z własnych
+            narzędzi reklamowych służących do profilowania użytkowników.
+          </p>
+
+          <p>
+            Strona może być udostępniana z wykorzystaniem
+            usług zewnętrznych, takich jak GitHub Pages.
+            Dostawcy takich usług mogą przetwarzać
+            podstawowe dane techniczne zgodnie z własnymi
+            zasadami prywatności.
+          </p>
+
+          <p>
+            Jeżeli w przyszłości na stronie zostaną dodane
+            narzędzia analityczne, reklamowe lub inne technologie
+            wymagające cookies, polityka prywatności może
+            zostać odpowiednio zaktualizowana.
+          </p>
+
+        </section>
+
+
+
+        <!-- 11 -->
+
+        <section
+          class="rule-section"
+          id="bezpieczenstwo"
+        >
+
+          <span class="rule-number">
+            Punkt 11
+          </span>
+
+          <h2>
+            Bezpieczeństwo danych
+          </h2>
+
+          <p>
+            WebNexo.pl podejmuje rozsądne działania,
+            aby ograniczyć dostęp do danych osób
+            nieuprawnionych.
+          </p>
+
+          <p>
+            Klient nie powinien przesyłać przez e-mail
+            danych szczególnie wrażliwych, haseł,
+            danych logowania do banku ani innych informacji,
+            które nie są potrzebne do wykonania projektu.
+          </p>
+
+          <p>
+            Jeżeli do wykonania strony potrzebne jest
+            konto w zewnętrznej usłudze, preferowane jest,
+            aby konto należało do klienta.
+          </p>
+
+        </section>
+
+
+
+        <!-- 12 -->
+
+        <section
+          class="rule-section"
+          id="zmiany"
+        >
+
+          <span class="rule-number">
+            Punkt 12
+          </span>
+
+          <h2>
+            Zmiany polityki prywatności
+          </h2>
+
+          <p>
+            Polityka prywatności może być aktualizowana,
+            jeżeli zmieni się sposób działania WebNexo.pl,
+            wykorzystywane narzędzia lub obowiązujące wymagania.
+          </p>
+
+          <p>
+            Aktualna wersja polityki jest publikowana
+            na tej stronie.
+          </p>
+
+          <p>
+            Data ostatniej aktualizacji znajduje się
+            w górnej części dokumentu.
+          </p>
+
+        </section>
+
+
+
+        <!-- 13 -->
+
+        <section
+          class="rule-section"
+          id="kontakt"
+        >
+
+          <span class="rule-number">
+            Punkt 13
+          </span>
+
+          <h2>
+            Kontakt
+          </h2>
+
+          <p>
+            Jeżeli masz pytanie dotyczące polityki prywatności,
+            danych przekazanych podczas realizacji projektu
+            lub chcesz zgłosić prośbę dotyczącą swoich danych,
+            skontaktuj się poprzez:
+          </p>
+
+          <p>
+            <span class="highlight">
+              kontakt.webnexo@gmail.com
+            </span>
+          </p>
+
+        </section>
+
+
+
+        <!-- WAŻNA INFORMACJA -->
+
+        <div class="important">
+
+          WebNexo.pl wykorzystuje dane przede wszystkim do kontaktu
+          z klientem, przygotowania wyceny, wykonania zamówionej strony,
+          obsługi płatności oraz przekazania gotowych plików.
+          Dane klientów nie są sprzedawane innym podmiotom.
+
+        </div>
+
+
+
+        <!-- KONTAKT -->
+
+        <div class="contact">
+
+          <h2>
+            Masz pytanie?
+          </h2>
+
+          <p>
+            Napisz w sprawie swoich danych lub prywatności.
+          </p>
+
+          <a
+            href="mailto:kontakt.webnexo@gmail.com"
+            class="contact-button"
+          >
+            kontakt.webnexo@gmail.com
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =========================
+       STOPKA
+  ========================= -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <div>
+        © 2026 WebNexo.pl
+      </div>
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Strona główna
+        </a>
+
+        <a href="platnosci.html">
+          Płatności
+        </a>
+
+        <a href="regulamin.html">
+          Regulamin
+        </a>
+
+        <a href="polityka-prywatnosci.html">
+          Polityka prywatności
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================
+       MENU TELEFON
+  ========================= -->
+
+  <script>
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", function () {
+
+      navLinks.classList.toggle("active");
+
+      const opened =
+        navLinks.classList.contains("active");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        opened
+      );
+
+      if (opened) {
+        menuBtn.textContent = "✕";
+      } else {
+        menuBtn.textContent = "☰";
+      }
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove("active");
+
+            menuBtn.textContent = "☰";
+
+            menuBtn.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 850) {
+
+          navLinks.classList.remove("active");
+
+          menuBtn.textContent = "☰";
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
