@@ -163,24 +163,54 @@
     .menu-btn {
       display: none;
 
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
 
+      flex-direction: column;
       align-items: center;
       justify-content: center;
 
+      gap: 5px;
+
       border-radius: 12px;
 
-      border: 1px solid rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.15);
 
-      background: rgba(255,255,255,0.05);
-
-      color: white;
-
-      font-size: 24px;
+      background: rgba(255,255,255,0.07);
 
       cursor: pointer;
-    }
+
+      flex-shrink: 0;
+
+      position: relative;
+
+      z-index: 1100;
+   }
+
+   .menu-btn span {
+     display: block;
+
+     width: 23px;
+     height: 2px;
+
+     background: #ffffff;
+
+     border-radius: 100px;
+
+     transition: 0.25s;
+   }
+
+   .menu-btn.active span:nth-child(1) {
+     transform: translateY(7px) rotate(45deg);
+   }
+
+   .menu-btn.active span:nth-child(2) {
+     opacity: 0;
+   }
+
+   .menu-btn.active span:nth-child(3) {
+     transform: translateY(-7px) rotate(-45deg);
+   }
 
 
     /* =========================
@@ -699,7 +729,7 @@
     @media (max-width: 850px) {
 
       .menu-btn {
-        display: flex;
+        display: flex !important;
       }
 
       .nav-links {
@@ -977,9 +1007,11 @@
         type="button"
         aria-label="Otwórz menu"
         aria-expanded="false"
-      >
-        ☰
-      </button>
+     >
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
 
 
       <!-- MENU -->
