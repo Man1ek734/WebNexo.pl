@@ -379,9 +379,14 @@
     }
 
     .price-big {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
       font-size: clamp(45px, 6vw, 72px);
       font-weight: 900;
-      letter-spacing: -4px;
+      letter-spacing: -2px;
+      line-height: 1;
     }
 
     .price-big span {
@@ -776,8 +781,10 @@
             </p>
 
             <div class="price-big">
-              300–3000 zł
-            </div>
+              <span>300</span>
+              <span class="price-dash">—</span>
+             <span>3000 zł</span>
+           </div>
 
           </div>
 
